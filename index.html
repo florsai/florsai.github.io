@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florencia Saiegh — Publicidad · Estrategia + Creatividad</title>
+<meta name="description" content="Portfolio de Florencia Saiegh (Flor Sai). Estudiante de la Licenciatura en Publicidad en la Universidad de Palermo. Estrategia, conceptos creativos y campañas.">
+<meta property="og:title" content="Florencia Saiegh — Portfolio">
+<meta property="og:description" content="Estrategia + creatividad. Campañas para LEGO, KitKat, Pepsi, Shazam × Beats, Havanna y más.">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236B2EFF'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-weight='900' font-size='30' text-anchor='middle' fill='%23D4FF3F'%3EFS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0D0D0D; --ink-2:#1A1A1A; --paper:#F2EEE6; --paper-2:#E8E2D6;
+  --violet:#6B2EFF; --lime:#D4FF3F; --muted:#6E6A63; --line:rgba(13,13,13,.14);
+  --display:"Archivo",system-ui,sans-serif; --body:"DM Sans",system-ui,sans-serif;
+  --pad:clamp(16px,4vw,56px); --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.display{font-family:var(--display);font-stretch:125%;font-weight:900;letter-spacing:-.02em;line-height:.9;text-transform:uppercase}
+.eyebrow{font-family:var(--display);font-stretch:110%;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.hl{background:linear-gradient(transparent 58%,var(--lime) 58%);padding:0 .08em}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad);color:var(--paper);background:rgba(13,13,13,.72);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.logo{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:20px;text-decoration:none;letter-spacing:-.01em}
+.nav ul{display:flex;gap:clamp(12px,2.4vw,32px);list-style:none;align-items:center}
+.nav a{text-decoration:none;font-weight:500;font-size:15px}
+.nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.lang{display:flex;border:1.5px solid currentColor;border-radius:99px;overflow:hidden;font-size:12px;font-weight:700}
+.lang button{padding:4px 9px}
+.lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+@media (max-width:640px){.nav .hide-sm{display:none}}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--paper);min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hero .wrap{width:100%;padding-top:110px;padding-bottom:clamp(28px,5vw,56px)}
+.hero-name{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:clamp(15px,1.4vw,18px);letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:clamp(16px,2.5vw,28px)}
+.hero h1{font-size:clamp(40px,9.4vw,170px)}
+.hero h1 .plus{color:var(--violet);font-stretch:62%;display:inline-block;transform:translateY(.02em)}
+.hero h1 .row{display:block;overflow:hidden}
+.hero h1 .row span{display:inline-block;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .row:nth-child(2) span{animation-delay:.12s}
+@keyframes rise{to{transform:none}}
+.hero-bottom{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end;margin-top:clamp(24px,4vw,48px)}
+.hero-bottom p{font-size:clamp(17px,1.6vw,21px);max-width:560px;color:#D9D4CA}
+.hero-bottom p strong{color:var(--paper);font-weight:600}
+.hero-cta{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:99px;font-weight:700;text-decoration:none;font-size:15px;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-ghost{border:1.5px solid currentColor}
+.btn-ink{background:var(--ink);color:var(--paper)}
+@media (max-width:760px){.hero-bottom{grid-template-columns:1fr}.hero-cta{justify-content:flex-start}}
+.blob{position:absolute;width:52vw;height:52vw;max-width:760px;max-height:760px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--violet),transparent 62%);filter:blur(10px);opacity:.55;top:-14vw;right:-12vw;animation:float 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes float{to{transform:translate(-6vw,8vw) scale(1.1)}}
+
+/* MARQUEE */
+.marquee{background:var(--violet);color:var(--paper);overflow:hidden;border-block:2px solid var(--ink);white-space:nowrap}
+.marquee-track{display:inline-flex;animation:scroll 48s linear infinite;padding:18px 0}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--display);font-stretch:100%;font-weight:800;font-style:italic;font-size:clamp(20px,2.6vw,34px);padding-right:44px}
+.marquee span::after{content:"✳";font-style:normal;color:var(--lime);margin-left:44px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--ink)}
+.stat{padding:clamp(22px,3vw,40px) var(--pad);border-right:2px solid var(--ink)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(40px,5.4vw,84px);line-height:.9;letter-spacing:-.03em}
+.stat span{display:block;margin-top:8px;font-size:15px;color:var(--muted);max-width:220px}
+@media (max-width:860px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:2px solid var(--ink)}}
+
+/* SECTIONS */
+section{scroll-margin-top:60px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:clamp(56px,8vw,120px) 0 clamp(24px,3vw,40px);flex-wrap:wrap}
+.sec-head h2{font-size:clamp(48px,9vw,140px)}
+.sec-head p{max-width:420px;color:var(--muted)}
+
+/* WORK */
+.featured{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,28px);margin-top:clamp(16px,2vw,28px)}
+@media (max-width:1000px){.featured{grid-template-columns:1fr 1fr}.featured .card:last-child{grid-column:1/-1}.featured .card:last-child .media{aspect-ratio:16/9}}
+@media (max-width:700px){.featured,.grid{grid-template-columns:1fr}.featured .card:last-child .media{aspect-ratio:5/4}}
+.card{position:relative;display:block;text-decoration:none;border-radius:var(--radius);overflow:hidden;background:var(--b,#222);color:var(--bt,#fff);isolation:isolate;transform:translateY(24px);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s}
+.card.in{transform:none;opacity:1}
+.card .media{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--b)}
+.featured .card .media{aspect-ratio:5/4}
+.card img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 0%);transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .5s}
+.card:hover img{transform:scale(1.06)}
+.card .fallback{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(28px,3.6vw,52px);line-height:.95;text-transform:uppercase;letter-spacing:-.02em;padding:20px;text-align:center;overflow-wrap:anywhere}
+.card .body{padding:20px 22px 22px;display:grid;gap:6px;background:var(--b)}
+.card .brand{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(26px,2.6vw,38px);text-transform:uppercase;line-height:.95;letter-spacing:-.02em}
+.card .concept{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(16px,1.4vw,19px);line-height:1.25;opacity:.92}
+.card .meta{font-size:13px;opacity:.75;margin-top:4px}
+.badge{position:absolute;top:16px;left:16px;z-index:2;background:var(--lime);color:var(--ink);font-family:var(--display);font-stretch:110%;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:99px;box-shadow:0 2px 0 var(--ink)}
+.arrow{position:absolute;top:16px;right:16px;z-index:2;width:46px;height:46px;border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;font-size:20px;transform:rotate(-45deg) scale(.85);opacity:0;transition:.35s}
+.card:hover .arrow,.card:focus-visible .arrow{opacity:1;transform:rotate(0) scale(1)}
+.card:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+
+/* ABOUT */
+.about{background:var(--ink);color:var(--paper);margin-top:clamp(64px,9vw,140px);padding-bottom:clamp(56px,8vw,120px)}
+.about .sec-head p{color:#B9B3A8}
+.about-top{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.portrait{aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--violet);position:relative;border:3px solid var(--lime)}
+.portrait .crop{position:absolute;inset:0;background-image:var(--cv);background-repeat:no-repeat;background-size:620% auto;background-position:96.8% .9%}
+.portrait .ini{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:72px;color:var(--lime)}
+.bio p{font-size:clamp(19px,2vw,26px);line-height:1.4;margin-bottom:18px;max-width:820px}
+.bio p.small{font-size:17px;color:#B9B3A8}
+.bio .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media (max-width:760px){.about-top{grid-template-columns:1fr}.portrait{max-width:220px}}
+.cv{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,5vw,80px);margin-top:clamp(56px,7vw,100px);border-top:2px solid #333;padding-top:clamp(32px,4vw,56px)}
+@media (max-width:900px){.cv{grid-template-columns:1fr}}
+.cv h3{color:var(--lime);margin-bottom:22px}
+.tl{list-style:none;display:grid;gap:26px}
+.tl li{display:grid;grid-template-columns:118px 1fr;gap:16px}
+.tl .yr{font-family:var(--display);font-stretch:110%;font-weight:700;font-size:14px;color:#B9B3A8;padding-top:3px}
+.tl h4{font-family:var(--display);font-stretch:110%;font-weight:800;font-size:20px;line-height:1.15}
+.tl h4 small{display:block;font-family:var(--body);font-weight:500;font-size:15px;color:#B9B3A8;margin-top:2px}
+.tl p{color:#D9D4CA;font-size:15.5px;margin-top:6px}
+@media (max-width:480px){.tl li{grid-template-columns:1fr;gap:4px}}
+.cv-block+.cv-block{margin-top:44px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1.5px solid #4A4A4A;border-radius:99px;padding:8px 14px;font-size:15px}
+.chip.lime{background:var(--lime);color:var(--ink);border-color:var(--lime);font-weight:600}
+
+/* CONTACT */
+.contact{padding:clamp(72px,10vw,160px) 0 40px;text-align:left}
+.contact h2{font-size:clamp(56px,13vw,220px)}
+.contact h2 em{font-style:italic;font-stretch:62%;color:var(--violet)}
+.mail{display:inline-flex;align-items:center;gap:14px;margin-top:clamp(24px,4vw,44px);font-family:var(--display);font-stretch:100%;font-weight:700;font-size:clamp(22px,3.6vw,48px);text-decoration:none;border-bottom:3px solid var(--ink);padding-bottom:4px;word-break:break-all}
+.mail:hover{color:var(--violet);border-color:var(--violet)}
+.copy{font-size:13px;font-weight:700;border:1.5px solid var(--ink);border-radius:99px;padding:6px 12px;margin-left:12px;vertical-align:middle}
+.socials{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+
+/* CASE VIEW */
+.case{position:fixed;inset:0;z-index:80;background:var(--paper);overflow-y:auto;transform:translateY(100%);transition:transform .6s cubic-bezier(.7,0,.2,1);visibility:hidden}
+.case.open{transform:none;visibility:visible}
+.case-bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad);background:var(--b);color:var(--bt)}
+.case-bar button,.case-bar a{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;padding:8px 14px;border-radius:99px;border:1.5px solid currentColor}
+.case-hero{background:var(--b);color:var(--bt);padding:clamp(28px,6vw,90px) 0 clamp(40px,6vw,90px)}
+.case-hero .kick{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.case-hero .kick .pill{border:1.5px solid currentColor;border-radius:99px;padding:6px 12px;font-size:13px;font-weight:600}
+.case-hero .kick .pill.award{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.case-hero h2{font-size:clamp(46px,10vw,150px)}
+.case-hero .quote{font-family:var(--display);font-style:italic;font-weight:700;font-stretch:100%;font-size:clamp(24px,3.6vw,52px);line-height:1.08;margin-top:22px;max-width:1100px}
+.case-hero .tagline{margin-top:16px;font-size:clamp(16px,1.5vw,20px);opacity:.85;max-width:760px}
+.case-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(28px,4vw,64px) clamp(28px,5vw,80px);padding:clamp(40px,6vw,90px) 0}
+@media (max-width:760px){.case-cols{grid-template-columns:1fr}}
+.case-cols .blk h3{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.case-cols .blk h3 i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--lime);font-size:12px}
+.case-cols .blk p{font-size:17.5px}
+.case-cols .blk p+p{margin-top:12px}
+.case-cols .blk.role{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:clamp(22px,3vw,36px);grid-column:1/-1}
+.case-cols .blk.role h3 i{background:var(--lime);color:var(--ink)}
+.case-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:-20px;padding-bottom:clamp(28px,4vw,48px)}
+.case-tags span{border:1.5px solid var(--ink);border-radius:99px;padding:6px 12px;font-size:14px;font-weight:500}
+.board{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);cursor:zoom-in;position:relative}
+.board img{width:100%}
+.board .hint{position:absolute;right:14px;bottom:14px;background:var(--ink);color:var(--paper);border-radius:99px;padding:8px 14px;font-size:13px;font-weight:700}
+.video{margin-top:clamp(20px,3vw,36px);border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:#000}
+.video iframe{width:100%;height:100%;border:0}
+.next{display:block;text-decoration:none;margin-top:clamp(48px,7vw,100px);background:var(--ink);color:var(--paper);padding:clamp(32px,5vw,70px) var(--pad);text-align:left}
+.next small{color:var(--lime)}
+.next b{display:block;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(40px,8vw,120px);text-transform:uppercase;line-height:.9;margin-top:10px;transition:letter-spacing .4s}
+.next:hover b{letter-spacing:.02em}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(13,13,13,.95);display:none;overflow:auto;cursor:zoom-out}
+.lb.open{display:block}
+.lb img{width:min(1800px,100%);margin:0 auto}
+.lb button{position:fixed;top:14px;right:14px;background:var(--lime);color:var(--ink);border-radius:99px;padding:10px 16px;font-weight:800}
+
+/* CURSOR */
+.cursor{position:fixed;left:0;top:0;z-index:200;width:14px;height:14px;border-radius:50%;background:var(--lime);pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;mix-blend-mode:difference;display:grid;place-items:center;font-size:0;font-weight:800;color:var(--ink)}
+.cursor.big{width:96px;height:96px;mix-blend-mode:normal;font-size:13px;font-family:var(--display);font-stretch:110%;text-transform:uppercase;letter-spacing:.06em}
+@media (hover:none),(pointer:coarse){.cursor{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .row span{transform:none}.card{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Principal">
+  <a class="logo" href="#top">FLOR SAI</a>
+  <ul>
+    <li class="hide-sm"><a href="#trabajos" data-i18n="nav.work">Trabajos</a></li>
+    <li class="hide-sm"><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+    <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+    <li><div class="lang" role="group" aria-label="Idioma / Language"><button data-lang="es" aria-pressed="true">ES</button><button data-lang="en" aria-pressed="false">EN</button></div></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="blob"></div>
+  <div class="wrap">
+    <p class="hero-name">Florencia Saiegh — Flor Sai</p>
+    <h1 class="display"><span class="row"><span data-i18n="hero.l1">Estrategia</span></span><span class="row"><span><span class="plus">+</span><span data-i18n="hero.l2">creatividad</span></span></span></h1>
+    <div class="hero-bottom">
+      <p data-i18n-html="hero.p">Estudiante de la <strong>Licenciatura en Publicidad</strong> en la Universidad de Palermo. Me interesa especialmente el desarrollo de conceptos creativos, la estrategia y la construcción de campañas.</p>
+      <div class="hero-cta">
+        <a class="btn btn-lime" href="#trabajos" data-i18n="hero.cta1">Ver trabajos ↓</a>
+        <a class="btn btn-ghost" href="#contacto" data-i18n="hero.cta2">Hablemos</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-label="Conceptos de campaña"><div class="marquee-track" id="marquee"></div></div>
+
+<div class="stats" id="stats">
+  <div class="stat"><b>7</b><span data-i18n="stat.1">campañas desarrolladas</span></div>
+  <div class="stat"><b>3</b><span data-i18n="stat.2">trabajos premiados</span></div>
+  <div class="stat"><b>1.º</b><span data-i18n="stat.3">puesto de la cátedra con LEGO Architecture BA</span></div>
+  <div class="stat"><b>2</b><span data-i18n="stat.4">proyectos con clientes y briefs reales</span></div>
+</div>
+
+<main>
+  <section id="trabajos" class="wrap" aria-labelledby="t-work">
+    <div class="sec-head">
+      <h2 class="display" id="t-work" data-i18n="work.title">Trabajos</h2>
+      <p data-i18n="work.sub">Campañas desde el insight hasta la pieza: investigación, estrategia, concepto creativo y ejecución.</p>
+    </div>
+    <div class="featured" id="featured"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="sobre-mi" class="about" aria-labelledby="t-about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="t-about" data-i18n="about.title">Sobre mí</h2>
+        <p data-i18n="about.sub">Publicidad, marketing e investigación.</p>
+      </div>
+      <div class="about-top">
+        <div class="portrait"><div class="ini">FS</div><div class="crop" role="img" aria-label="Foto de Florencia Saiegh"></div></div>
+        <div class="bio">
+          <p data-i18n="about.p1">¡Hola! Soy Florencia Saiegh, estudiante de tercer año de la Licenciatura en Publicidad en la Universidad de Palermo y graduada de la Tecnicatura en Comercialización con orientación en Marketing y Publicidad.</p>
+          <p data-i18n="about.p2">Me interesa especialmente el desarrollo de conceptos creativos, la estrategia y la construcción de campañas.</p>
+          <p class="small" data-i18n="about.p3">Tengo experiencia en marketing digital y como mystery shopper, además de formación complementaria en storytelling, community management y fotografía.</p>
+          <div class="btns">
+            <a class="btn btn-lime" href="cv.pdf" target="_blank" rel="noopener" data-i18n="about.cv">Descargar CV (PDF)</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/flor-sai" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="cv">
+        <div>
+          <div class="cv-block"><h3 class="eyebrow" data-i18n="cv.exp">Experiencia</h3><ul class="tl" id="exp"></ul></div>
+        </div>
+        <div>
+          <div class="cv-block"><h3 class="eyebrow" data-i18n="cv.edu">Educación</h3><ul class="tl" id="edu"></ul></div>
+          <div class="cv-block"><h3 class="eyebrow" data-i18n="cv.extra">Formación adicional</h3><ul class="tl" id="extra"></ul></div>
+        </div>
+      </div>
+      <div class="cv" style="border-top:0;margin-top:44px;padding-top:0">
+        <div class="cv-block"><h3 class="eyebrow" data-i18n="cv.awards">Premios</h3><div class="chips" id="awards"></div></div>
+        <div>
+          <div class="cv-block"><h3 class="eyebrow" data-i18n="cv.skills">Habilidades</h3><div class="chips" id="skills"></div></div>
+          <div class="cv-block"><h3 class="eyebrow" data-i18n="cv.lang">Idiomas</h3><div class="chips" id="langs"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="wrap contact" aria-labelledby="t-contact">
+    <p class="eyebrow" data-i18n="contact.kick">¿Tenés un proyecto, una pasantía o un puesto?</p>
+    <h2 class="display" id="t-contact" data-i18n-html="contact.title">¿Habla<em>mos</em>?</h2>
+    <div><a class="mail" href="mailto:saieghflor@gmail.com">saieghflor@gmail.com</a><button class="copy" id="copy" data-i18n="contact.copy">Copiar</button></div>
+    <div class="socials">
+      <a class="btn btn-ink" href="https://www.linkedin.com/in/flor-sai" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/portfolio.fsai" target="_blank" rel="noopener">Instagram @portfolio.fsai ↗</a>
+    </div>
+  </section>
+  <footer class="wrap"><span>© <span id="yr"></span> Florencia Saiegh</span><span data-i18n="footer">Hecho con estrategia + creatividad. Buenos Aires.</span></footer>
+</main>
+
+<article class="case" id="case" aria-modal="true" role="dialog" aria-labelledby="case-title"></article>
+<div class="lb" id="lb" role="dialog" aria-label="Imagen ampliada"><button type="button" data-i18n="lb.close">Cerrar ✕</button><img alt=""></div>
+
+<script src="assets.js"></script>
+<script>
+/* ============ ASSETS: assets.js define window.ASSETS = {img:{...}, vid:{...}} ============ */
+const IMG = (window.ASSETS && window.ASSETS.img) || {
+  "un-dulce-permiso":"%%IMG:un-dulce-permiso%%",
+  "williamsburg":"%%IMG:williamsburg%%",
+  "kitkat":"%%IMG:kitkat%%",
+  "lego-ba":"%%IMG:lego-ba%%",
+  "pepsi-twist":"%%IMG:pepsi-twist%%",
+  "shazam-ft-beats":"%%IMG:shazam-ft-beats%%",
+  "havanna":"%%IMG:havanna%%",
+  "cv":"%%IMG:cv%%"
+};
+const VID = (window.ASSETS && window.ASSETS.vid) || {
+  "shazam-ft-beats":"%%VID:shazam-ft-beats%%",
+  "havanna":"%%VID:havanna%%"
+};
+const ok = u => u && !u.startsWith('%%');
+
+/* ============ TEXTOS DE INTERFAZ ============ */
+const UI = {
+  es:{
+    "nav.work":"Trabajos","nav.about":"Sobre mí","nav.contact":"Contacto",
+    "hero.l1":"Estrategia","hero.l2":"creatividad",
+    "hero.p":"Estudiante de la <strong>Licenciatura en Publicidad</strong> en la Universidad de Palermo. Me interesa especialmente el desarrollo de conceptos creativos, la estrategia y la construcción de campañas.",
+    "hero.cta1":"Ver trabajos ↓","hero.cta2":"Hablemos",
+    "stat.1":"campañas desarrolladas","stat.2":"trabajos premiados","stat.3":"puesto de la cátedra con LEGO Architecture BA","stat.4":"proyectos con clientes y briefs reales",
+    "work.title":"Trabajos","work.sub":"Campañas desde el insight hasta la pieza: investigación, estrategia, concepto creativo y ejecución.",
+    "about.title":"Sobre mí","about.sub":"Publicidad, marketing e investigación.",
+    "about.p1":"¡Hola! Soy Florencia Saiegh, estudiante de tercer año de la Licenciatura en Publicidad en la Universidad de Palermo y graduada de la Tecnicatura en Comercialización con orientación en Marketing y Publicidad.",
+    "about.p2":"Me interesa especialmente el desarrollo de conceptos creativos, la estrategia y la construcción de campañas.",
+    "about.p3":"Tengo experiencia en marketing digital y como mystery shopper, además de formación complementaria en storytelling, community management y fotografía.",
+    "about.cv":"Descargar CV (PDF)",
+    "cv.exp":"Experiencia","cv.edu":"Educación","cv.extra":"Formación adicional","cv.awards":"Premios","cv.skills":"Habilidades","cv.lang":"Idiomas",
+    "contact.kick":"¿Tenés un proyecto, una pasantía o un puesto?","contact.title":"¿Habla<em>mos</em>?","contact.copy":"Copiar","contact.copied":"¡Copiado!",
+    "footer":"Hecho con estrategia + creatividad. Buenos Aires.",
+    "lb.close":"Cerrar ✕",
+    "case.back":"← Volver","case.challenge":"El desafío","case.idea":"La idea","case.campaign":"La campaña","case.role":"Mi rol",
+    "case.zoom":"Ver en grande ⤢","case.next":"Siguiente caso","card.cta":"Ver caso"
+  },
+  en:{
+    "nav.work":"Work","nav.about":"About","nav.contact":"Contact",
+    "hero.l1":"Strategy","hero.l2":"creativity",
+    "hero.p":"<strong>Advertising</strong> student at Universidad de Palermo (Buenos Aires). I'm especially drawn to developing creative concepts, strategy and building campaigns.",
+    "hero.cta1":"See work ↓","hero.cta2":"Let's talk",
+    "stat.1":"campaigns developed","stat.2":"award-winning projects","stat.3":"place in class with LEGO Architecture BA","stat.4":"projects with real clients and briefs",
+    "work.title":"Work","work.sub":"Campaigns from insight to execution: research, strategy, creative concept and craft.",
+    "about.title":"About","about.sub":"Advertising, marketing and research.",
+    "about.p1":"Hi! I'm Florencia Saiegh, a third-year student in the Bachelor's in Advertising at Universidad de Palermo, and a graduate of the Marketing & Commercialization technical degree with a focus on Marketing and Advertising.",
+    "about.p2":"I'm especially drawn to developing creative concepts, strategy and building campaigns.",
+    "about.p3":"I have experience in digital marketing and as a mystery shopper, plus additional training in storytelling, community management and photography.",
+    "about.cv":"Download CV (PDF)",
+    "cv.exp":"Experience","cv.edu":"Education","cv.extra":"Additional training","cv.awards":"Awards","cv.skills":"Skills","cv.lang":"Languages",
+    "contact.kick":"Got a project, an internship or a role?","contact.title":"Let's <em>talk</em>.","contact.copy":"Copy","contact.copied":"Copied!",
+    "footer":"Made with strategy + creativity. Buenos Aires.",
+    "lb.close":"Close ✕",
+    "case.back":"← Back","case.challenge":"The challenge","case.idea":"The idea","case.campaign":"The campaign","case.role":"My role",
+    "case.zoom":"View full size ⤢","case.next":"Next case","card.cta":"View case"
+  }
+};
+
+/* ============ PROYECTOS ============ */
+const P = [
+{
+  id:"lego-ba", img:"lego-ba", featured:true, b:"#FFCF00", bt:"#0D0D0D", pos:"50% 0%",
+  brand:"LEGO BA",
+  es:{ title:"LEGO Architecture Buenos Aires", quote:"Una línea de sets para recorrer la ciudad.", plain:true,
+    meta:"Publicidad II · Universidad de Palermo · 2024", award:"1.º puesto de la cátedra",
+    tags:["Estrategia","Estrategia de medios","Vía pública","BTL","Desarrollo de producto"],
+    challenge:["Imaginar una expansión de la línea LEGO Architecture vinculada con Buenos Aires, que no se limitara a reproducir edificios, sino que generara una conexión entre la marca, la ciudad y quienes la recorren: ciudadanos y turistas."],
+    idea:["Desarrollamos una línea de sets inspirada en monumentos y edificios icónicos de Buenos Aires, con una estrategia de distribución selectiva: cada modelo podía conseguirse en los alrededores del lugar que representaba, y así la compra pasaba a ser parte de la experiencia turística y urbana."],
+    campaign:["La campaña integró estrategia, vía pública, acciones BTL y una propuesta de medios pensada para convertir cada punto de la ciudad en un espacio de descubrimiento. El proyecto obtuvo el primer puesto de la cátedra."],
+    role:["Participé en la investigación y la construcción estratégica del proyecto, el desarrollo del concepto creativo y su bajada a campaña. También trabajé en la definición de acciones, piezas, estrategia de medios y la presentación visual del caso."]},
+  en:{ title:"LEGO Architecture Buenos Aires", quote:"A line of sets to explore the city.", plain:true,
+    meta:"Advertising II · Universidad de Palermo · 2024", award:"1st place in class",
+    tags:["Strategy","Media strategy","Out-of-home","BTL","Product development"],
+    challenge:["Imagine an expansion of the LEGO Architecture line tied to Buenos Aires — one that didn't just replicate buildings, but built a connection between the brand, the city and the people who move through it: locals and tourists."],
+    idea:["We developed a line of sets inspired by Buenos Aires' iconic monuments and buildings, paired with a selective distribution strategy: each model could be found around the place it represented, turning the purchase into part of the tourist and urban experience."],
+    campaign:["The campaign combined strategy, out-of-home, BTL activations and a media plan designed to turn every corner of the city into a place of discovery. The project won first place in class."],
+    role:["I worked on the research and strategic foundation of the project, the creative concept and how it rolled out into the campaign. I also defined the activations, assets, media strategy and the visual presentation of the case."]}
+},
+{
+  id:"kitkat", img:"kitkat", featured:true, b:"#D6001C", bt:"#FFFFFF", pos:"50% 0%",
+  brand:"KitKat",
+  es:{ title:"KitKat", quote:"“Relajá. Clavate un KitKat.”",
+    meta:"Publicidad III · Universidad de Palermo · 2025", award:"Trabajo premiado",
+    tags:["Insight","Concepto creativo","Copywriting","Digital","Activaciones"],
+    challenge:["Ampliar la relevancia de KitKat entre jóvenes adultos —especialmente estudiantes universitarios y personas que empiezan a insertarse en el mundo laboral—, manteniendo el territorio histórico de la marca: el break."],
+    idea:["A partir de situaciones cotidianas en las que parar unos minutos se vuelve necesario, desarrollamos “Relajá. Clavate un KitKat.”, una reinterpretación del clásico break de la marca desde un tono más cercano, relajado e irónico."],
+    campaign:["El concepto se llevó a distintas situaciones propias del target, de la facultad a una entrevista laboral. Entre las acciones se desarrolló BreakBot, una herramienta pensada para generar excusas justo cuando más se necesitaba un descanso, junto con piezas digitales y activaciones que expandían el universo de campaña."],
+    role:["Trabajé en la investigación del target y los insights, el desarrollo del concepto creativo y la construcción de las distintas situaciones de campaña. También participé en la redacción de copies, el diseño de activaciones y piezas, y la presentación integral del proyecto."]},
+  en:{ title:"KitKat", quote:"“Relajá. Clavate un KitKat.”", quoteSub:"(“Chill. Have a KitKat.”)",
+    meta:"Advertising III · Universidad de Palermo · 2025", award:"Award-winning project",
+    tags:["Insight","Creative concept","Copywriting","Digital","Activations"],
+    challenge:["Make KitKat more relevant to young adults — especially university students and people starting out in the workforce — while staying true to the brand's historic territory: the break."],
+    idea:["Starting from everyday moments when taking a few minutes off becomes a must, we created “Relajá. Clavate un KitKat.”, a reinterpretation of the brand's classic break with a warmer, more relaxed and ironic tone."],
+    campaign:["The concept played out across situations the target knows well, from college to a job interview. Actions included BreakBot, a tool that generated excuses right when you needed a break the most, alongside digital assets and activations that expanded the campaign universe."],
+    role:["I worked on target research and insights, the creative concept and building the campaign's different scenarios. I also contributed to copywriting, the design of activations and assets, and the full presentation of the project."]}
+},
+{
+  id:"havanna", img:"havanna", vid:"havanna", featured:true, b:"#F2C200", bt:"#7A0A12", pos:"50% 0%",
+  brand:"Havanna",
+  es:{ title:"Havanna — La Selección de los Recuerdos", quote:"“El sabor que siempre acompaña hoy juega el Mundial con vos.”",
+    meta:"Campañas en Punto de Venta · 2026", award:"2.º puesto de la cátedra",
+    tags:["Investigación de marca","Brief creativo","Punto de venta","Experiencias","Audiovisual"],
+    challenge:["Encontrar un lugar relevante para Havanna dentro del contexto del Mundial, evitando competir únicamente desde el territorio del alfajor y aprovechando un activo mucho más propio de la marca: su vínculo emocional con los recuerdos y los momentos compartidos."],
+    idea:["Así nació “La Selección de los Recuerdos”, una campaña que conecta el ritual de compartir productos Havanna con esos momentos que quedan asociados para siempre a un partido, una reunión o una celebración."],
+    campaign:["La campaña construyó un universo alrededor del fútbol, los productos Havanna y los recuerdos compartidos. Contempló experiencias en punto de venta, activaciones, un foodtruck, trivias, recorridos por locales y productos especiales, además de piezas audiovisuales con distintas escenas vinculadas a esos momentos."],
+    role:["Participé en la investigación de marca y del contexto competitivo, el desarrollo del brief creativo y la definición del concepto central. También trabajé en las ideas de activación y experiencia, la redacción de contenidos y piezas, y la construcción visual de la propuesta para su presentación."]},
+  en:{ title:"Havanna — La Selección de los Recuerdos", quote:"“El sabor que siempre acompaña hoy juega el Mundial con vos.”", quoteSub:"(“The flavor that's always by your side now plays the World Cup with you.”)",
+    meta:"Point-of-Sale Campaigns · 2026", award:"2nd place in class",
+    tags:["Brand research","Creative brief","Point of sale","Experiences","Audiovisual"],
+    challenge:["Find a relevant place for Havanna within the World Cup conversation without competing only on the alfajor, leveraging something much more uniquely the brand's own: its emotional bond with memories and shared moments."],
+    idea:["That's how “La Selección de los Recuerdos” (“The Memories Squad”) was born — a campaign connecting the ritual of sharing Havanna products with the moments that stay forever linked to a match, a get-together or a celebration."],
+    campaign:["The campaign built a universe around football, Havanna products and shared memories. It included in-store experiences, activations, a food truck, trivia games, store tours and special products, plus audiovisual pieces portraying scenes tied to those moments."],
+    role:["I worked on brand and competitive research, the creative brief and defining the core concept. I also developed activation and experience ideas, wrote content and assets, and built the visual proposal for the presentation."]}
+},
+{
+  id:"un-dulce-permiso", img:"un-dulce-permiso", b:"#4A2A1E", bt:"#F6E7C8", pos:"50% 0%",
+  brand:"Un Dulce Permiso",
+  es:{ title:"Un Dulce Permiso", quote:"“Factura va, envido viene, los muchachos se entretienen.”",
+    meta:"Campaña 360 · Publicidad VI · Universidad de Palermo · 2025 · Cliente real",
+    tags:["Campaña 360","Branding","Redes sociales","BTL","Cliente real"],
+    challenge:["Un Dulce Permiso necesitaba fortalecer su presencia y construir una identidad de marca más reconocible. Su comunicación en redes era desordenada, sin una estética ni una estrategia definidas, y tenía poco awareness fuera de su público habitual del barrio."],
+    idea:["Desarrollamos una campaña 360 que buscó transformar a la marca en ese “permiso” que nos damos para frenar un poco la rutina y disfrutar de algo rico, apoyándonos en códigos cotidianos y culturales argentinos."],
+    campaign:["Bajo el concepto creativo “Factura va, envido viene, los muchachos se entretienen”, construí un universo cercano, tradicional y argentino. La campaña llegó a distintos puntos de contacto con contenido para redes sociales, piezas gráficas y acciones BTL, apuntando a una comunicación más coherente y reconocible para la marca."],
+    role:["Desarrollé el proyecto completo: la investigación —del target, del concepto y de la empresa, incluidas conversaciones con su dueño—, la estrategia y el concepto creativo. También trabajé en la redacción y creación de piezas, y en el diseño y la presentación final de la campaña."]},
+  en:{ title:"Un Dulce Permiso", quote:"“Factura va, envido viene, los muchachos se entretienen.”", quoteSub:"(Pastries, a card game and good company — a very Argentine kind of fun.)",
+    meta:"360 campaign · Advertising VI · Universidad de Palermo · 2025 · Real client",
+    tags:["360 campaign","Branding","Social media","BTL","Real client"],
+    challenge:["Un Dulce Permiso, a neighborhood bakery, needed to strengthen its presence and build a more recognizable brand identity. Its social media was inconsistent, with no defined look or strategy, and it had little awareness beyond its regular local customers."],
+    idea:["We developed a 360 campaign that set out to turn the brand into that little “permission” we give ourselves to slow down and enjoy something sweet, drawing on everyday Argentine cultural codes."],
+    campaign:["Under the creative concept “Factura va, envido viene, los muchachos se entretienen”, I built a warm, traditional, very Argentine universe. The campaign reached different touchpoints through social content, print assets and BTL actions, aiming for more consistent and recognizable brand communication."],
+    role:["I developed the whole project: research — on the target, the concept and the business, including conversations with its owner — strategy and the creative concept. I also wrote and produced the assets, and designed and presented the final campaign."]}
+},
+{
+  id:"shazam-ft-beats", img:"shazam-ft-beats", vid:"shazam-ft-beats", b:"#0A84FF", bt:"#FFFFFF", pos:"50% 0%",
+  brand:"Shazam × Beats",
+  es:{ title:"Shazam ft. Beats", quote:"“Eso que sentís, es música.”",
+    meta:"Campaña conceptual · Publicidad V · 2025",
+    tags:["Co-branding","Concepto creativo","Lanzamiento de producto","Vía pública","Activaciones"],
+    challenge:["Encontrar un punto de encuentro relevante entre dos marcas directamente relacionadas con la música, evitando que la colaboración se sintiera únicamente como una asociación de logos."],
+    idea:["Unir la capacidad de Shazam de identificar una canción con la experiencia física y emocional de escucharla a través de Beats. Así nació “Eso que sentís, es música.”, un concepto que convierte el descubrimiento musical en una experiencia tangible."],
+    campaign:["Un co-branding entre ambas marcas con el lanzamiento ficticio de unos auriculares Beats con Shazam integrado: permitían identificar una canción al instante desde los propios auriculares, sin necesidad de sacar el celular, uniendo el descubrimiento musical con la experiencia de escucha.","Bajo el concepto se desarrolló una campaña integral con piezas digitales, vía pública, activaciones y comunicación de producto, construyendo una identidad visual urbana, tecnológica y vinculada a la cultura musical."]},
+  en:{ title:"Shazam ft. Beats", quote:"“Eso que sentís, es música.”", quoteSub:"(“What you feel is music.”)",
+    meta:"Concept campaign · Advertising V · 2025",
+    tags:["Co-branding","Creative concept","Product launch","Out-of-home","Activations"],
+    challenge:["Find a meaningful meeting point between two brands deeply tied to music, without the collaboration feeling like just two logos side by side."],
+    idea:["Combine Shazam's ability to identify a song with the physical, emotional experience of listening to it on Beats. That's how “Eso que sentís, es música.” (“What you feel is music.”) was born — a concept that turns music discovery into something tangible."],
+    campaign:["A co-branding built around the fictional launch of Beats headphones with Shazam built in: they could identify a song instantly from the headphones themselves, no phone needed, merging music discovery with the listening experience.","The concept rolled out into an integrated campaign with digital assets, out-of-home, activations and product communication, building an urban, tech-driven visual identity rooted in music culture."]}
+},
+{
+  id:"williamsburg", img:"williamsburg", b:"#C8102E", bt:"#FFFFFF", pos:"50% 0%",
+  brand:"Williamsburg",
+  es:{ title:"Williamsburg", quote:"Reposicionamiento a partir de un brief real.", plain:true,
+    meta:"Rebranding · Publicidad IV · Universidad de Palermo · 2025 · Brief real",
+    tags:["Rebranding","Reposicionamiento","Estrategia de comunicación","Activaciones","Brief real"],
+    challenge:["Williamsburg necesitaba volver a conectar con una generación con la que había perdido afinidad. A diferencia de otros proyectos, este trabajo partió de un brief presentado directamente por el cliente, con necesidades y problemáticas reales."],
+    idea:["Desarrollé un reposicionamiento que buscaba recuperar la relevancia de la marca, construyendo un territorio más vinculado con la pertenencia, la identidad y el universo cultural actual."],
+    campaign:["El proyecto incluyó una revisión estratégica de la marca, la redefinición de su target, un nuevo concepto de comunicación y su aplicación en campaña. La propuesta combinó contenido digital y activaciones para llevar el nuevo posicionamiento a distintos puntos de contacto."],
+    role:["Realicé desde la investigación y el análisis del brief hasta la definición del nuevo posicionamiento. Trabajé en el concepto creativo, la estrategia de comunicación, las ideas de activación, las piezas y la construcción visual de la presentación final."]},
+  en:{ title:"Williamsburg", quote:"Repositioning from a real client brief.", plain:true,
+    meta:"Rebranding · Advertising IV · Universidad de Palermo · 2025 · Real brief",
+    tags:["Rebranding","Repositioning","Communication strategy","Activations","Real brief"],
+    challenge:["Williamsburg needed to reconnect with a generation it had lost touch with. Unlike other projects, this one started from a brief presented directly by the client, with real needs and challenges."],
+    idea:["I developed a repositioning aimed at restoring the brand's relevance by building a territory more closely tied to belonging, identity and today's cultural landscape."],
+    campaign:["The project included a strategic review of the brand, a redefined target, a new communication concept and its campaign rollout. The proposal combined digital content and activations to bring the new positioning to different touchpoints."],
+    role:["I handled everything from researching and analyzing the brief to defining the new positioning. I worked on the creative concept, communication strategy, activation ideas, assets and the visual build of the final presentation."]}
+},
+{
+  id:"pepsi-twist", img:"pepsi-twist", b:"#004B93", bt:"#C6F432", pos:"50% 0%",
+  brand:"Pepsi Twist",
+  es:{ title:"Pepsi Twist", quote:"“Volvieron los 2000, volvió LA Twist. Posta.”",
+    meta:"Publicidad I · Universidad de Palermo · 2023",
+    tags:["Insight","Gen Z","Territorio New Retro","Copywriting","Vía pública","Streaming"],
+    challenge:["Recuperar Pepsi Twist y volver a hacerla relevante para una generación que, en muchos casos, no había vivido directamente su momento de mayor presencia."],
+    idea:["Encontré una oportunidad en la fascinación de la Gen Z por la estética y la cultura de los años 2000. Desde el territorio New Retro, planteé el regreso de Pepsi Twist como un producto capaz de conectar la nostalgia con códigos contemporáneos."],
+    campaign:["La campaña recuperó referencias visuales y culturales de los 2000 desde un lenguaje actual, informal y pensado para el target. La propuesta se llevó a vía pública, streaming y distintas piezas de comunicación."],
+    role:["Participé en la investigación del contexto cultural y del target, la construcción del insight y el desarrollo del concepto creativo. También trabajé en el tono verbal de la campaña, la redacción de copies, las ideas para las distintas piezas y su presentación visual."]},
+  en:{ title:"Pepsi Twist", quote:"“Volvieron los 2000, volvió LA Twist. Posta.”", quoteSub:"(“The 2000s are back, and so is Twist. For real.”)",
+    meta:"Advertising I · Universidad de Palermo · 2023",
+    tags:["Insight","Gen Z","New Retro territory","Copywriting","Out-of-home","Streaming"],
+    challenge:["Bring back Pepsi Twist and make it relevant again for a generation that, in many cases, never lived through its peak."],
+    idea:["I spotted an opportunity in Gen Z's fascination with 2000s aesthetics and culture. From the New Retro territory, I framed Pepsi Twist's comeback as a product able to connect nostalgia with today's codes."],
+    campaign:["The campaign revived 2000s visual and cultural references through a current, casual language built for the target. It rolled out across out-of-home, streaming and other communication assets."],
+    role:["I worked on researching the cultural context and the target, building the insight and developing the creative concept. I also shaped the campaign's verbal tone, wrote the copy, came up with ideas for the different assets and handled their visual presentation."]}
+}
+];
+
+/* ============ CV ============ */
+const CV = {
+  es:{
+    exp:[
+      ["2025 — 2026","Agencia Lader","Community Manager (práctica)","Gestión de redes sociales (Instagram, LinkedIn, TikTok) y calendarización de contenidos."],
+      ["2024 — 2025","Key Market","Investigación de mercado","Trabajo de campo con metodología Mystery Shopper. Organización de la información relevada en Excel."],
+      ["2021 — 2023","Estudio contable Torem","Estudio contable","Organización de archivos de clientes y actualización de cuentas corrientes. Traducción de balances e informes económico-financieros. Emisión de facturas en ARCA y carga de datos en el sistema contable Onvio."]
+    ],
+    edu:[
+      ["2025 — hoy","Licenciatura en Publicidad (en curso)","Universidad de Palermo",""],
+      ["2022 — 2025","Analista Universitaria en Comercialización","Universidad de Palermo · Título intermedio",""],
+      ["2016 — 2021","Escuela Scholem Aleijem","Bachillerato orientado a comunicación","Educación bilingüe en inglés y especialización en lengua y cultura hebrea-judaica."]
+    ],
+    extra:[
+      ["2024","Storytelling en el Marketing Digital","Santander Open Academy",""],
+      ["Jul 2022","Introducción al Community Management","Domestika · Curso online",""],
+      ["Jul 2022","Introducción a la fotografía","Domestika · Curso online",""]
+    ],
+    awards:["1.º puesto de la cátedra — LEGO Architecture BA (Publicidad II): estrategia de medios","2.º puesto de la cátedra — Havanna (Campañas en Punto de Venta)","Trabajo premiado — KitKat (Publicidad III)"],
+    skills:["Meta Business Suite","Métricas e insights de Instagram y TikTok","Calendarización de contenidos","Redacción publicitaria","Canva","Edits (Meta)","ChatGPT","Claude","Gemini","Canva IA","Excel (tablas dinámicas, reportes)","Google Workspace"],
+    langs:["Español — nativo","Inglés — B2 (First Certificate, Cambridge)","Hebreo — básico"]
+  },
+  en:{
+    exp:[
+      ["2025 — 2026","Lader Agency","Community Manager (internship)","Managed social media (Instagram, LinkedIn, TikTok) and content calendars."],
+      ["2024 — 2025","Key Market","Market research","Field work using the Mystery Shopper methodology. Organized the collected data in Excel."],
+      ["2021 — 2023","Estudio contable Torem","Accounting firm","Organized client files and updated current accounts. Translated balance sheets and financial reports. Issued invoices (ARCA) and entered data in the Onvio accounting system."]
+    ],
+    edu:[
+      ["2025 — now","Bachelor's in Advertising (in progress)","Universidad de Palermo",""],
+      ["2022 — 2025","University Analyst in Marketing & Commercialization","Universidad de Palermo · Intermediate degree",""],
+      ["2016 — 2021","Escuela Scholem Aleijem","High school, Communication track","Bilingual English education with a specialization in Hebrew language and Jewish culture."]
+    ],
+    extra:[
+      ["2024","Storytelling in Digital Marketing","Santander Open Academy",""],
+      ["Jul 2022","Introduction to Community Management","Domestika · Online course",""],
+      ["Jul 2022","Introduction to Photography","Domestika · Online course",""]
+    ],
+    awards:["1st place in class — LEGO Architecture BA (Advertising II): media strategy","2nd place in class — Havanna (Point-of-Sale Campaigns)","Award-winning project — KitKat (Advertising III)"],
+    skills:["Meta Business Suite","Instagram & TikTok metrics and insights","Content calendars","Copywriting","Canva","Edits (Meta)","ChatGPT","Claude","Gemini","Canva AI","Excel (pivot tables, reports)","Google Workspace"],
+    langs:["Spanish — native","English — B2 (First Certificate, Cambridge)","Hebrew — basic"]
+  }
+};
+
+/* ============ APP ============ */
+let lang = 'es';
+try{ lang = localStorage.getItem('fs-lang') || ((navigator.language||'es').startsWith('es')?'es':'en'); }catch(e){}
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const t = k => UI[lang][k] ?? k;
+
+function media(p, cls=''){
+  const u = IMG[p.img];
+  return `<div class="media ${cls}">${ok(u)?`<img src="${u}" alt="${esc(p.brand)} — ${esc(p[lang].title)}" loading="lazy" onerror="this.remove()">`:''}<div class="fallback" style="${ok(u)?'z-index:-1':''}">${esc(p.brand)}</div></div>`;
+}
+function card(p){
+  const d = p[lang];
+  return `<a class="card" href="#/${p.id}" style="--b:${p.b};--bt:${p.bt};--pos:${p.pos}" data-cursor="${esc(t('card.cta'))}">
+    ${d.award?`<span class="badge">★ ${esc(d.award)}</span>`:''}<span class="arrow">→</span>
+    ${media(p)}
+    <div class="body"><div class="brand">${esc(p.brand)}</div><div class="concept">${esc(d.quote)}</div><div class="meta">${esc(d.meta)}</div></div></a>`;
+}
+function tl(list){return list.map(([y,h,s,p])=>`<li><span class="yr">${esc(y)}</span><div><h4>${esc(h)}<small>${esc(s)}</small></h4>${p?`<p>${esc(p)}</p>`:''}</div></li>`).join('')}
+
+function render(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang));
+  $('#featured').innerHTML = P.filter(p=>p.featured).map(card).join('');
+  $('#grid').innerHTML = P.filter(p=>!p.featured).map(card).join('');
+  const q = P.filter(p=>!p[lang].plain).map(p=>`<span>${esc(p[lang].quote.replace(/[“”]/g,''))}</span>`).join('');
+  $('#marquee').innerHTML = q + q;
+  const c = CV[lang];
+  $('#exp').innerHTML = tl(c.exp); $('#edu').innerHTML = tl(c.edu); $('#extra').innerHTML = tl(c.extra);
+  $('#awards').innerHTML = c.awards.map(a=>`<span class="chip lime">★ ${esc(a)}</span>`).join('');
+  $('#skills').innerHTML = c.skills.map(a=>`<span class="chip">${esc(a)}</span>`).join('');
+  $('#langs').innerHTML = c.langs.map(a=>`<span class="chip">${esc(a)}</span>`).join('');
+  reveal(); bindCursor(); route();
+}
+
+function blk(n,key,paras,extra=''){ if(!paras||!paras.length) return '';
+  return `<div class="blk ${extra}"><h3 class="eyebrow"><i>${n}</i>${esc(t(key))}</h3>${paras.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`; }
+
+function openCase(id){
+  const i = P.findIndex(p=>p.id===id); if(i<0) return closeCase();
+  const p = P[i], d = p[lang], nx = P[(i+1)%P.length], u = IMG[p.img], v = VID[p.vid];
+  const el = $('#case');
+  el.style.cssText = `--b:${p.b};--bt:${p.bt}`;
+  el.innerHTML = `
+  <div class="case-bar"><button type="button" id="back">${esc(t('case.back'))}</button><span class="logo">FLOR SAI</span></div>
+  <header class="case-hero"><div class="wrap">
+    <div class="kick">${d.award?`<span class="pill award">★ ${esc(d.award)}</span>`:''}<span class="pill">${esc(d.meta)}</span></div>
+    <h2 class="display" id="case-title">${esc(p.brand)}</h2>
+    <p class="quote">${esc(d.quote)}</p>${d.quoteSub?`<p class="tagline">${esc(d.quoteSub)}</p>`:''}
+  </div></header>
+  <div class="wrap">
+    <div class="case-cols">
+      ${blk('01','case.challenge',d.challenge)}${blk('02','case.idea',d.idea)}
+      ${blk('03','case.campaign',d.campaign)}${blk('04','case.role',d.role,'role')}
+    </div>
+    <div class="case-tags">${d.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>
+    ${ok(u)?`<div class="board" id="board" data-cursor="${esc(t('case.zoom'))}"><img src="${u}" alt="${esc(p.brand)} — ${esc(d.title)}"><span class="hint">${esc(t('case.zoom'))}</span></div>`:''}
+    ${ok(v)?`<div class="video"><iframe src="${v}" title="${esc(p.brand)} — video" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>`:''}
+  </div>
+  <a class="next" href="#/${nx.id}"><small class="eyebrow">${esc(t('case.next'))} →</small><b>${esc(nx.brand)}</b></a>`;
+  el.classList.add('open'); el.scrollTop = 0; document.body.style.overflow='hidden';
+  document.title = `${p.brand} — Florencia Saiegh`;
+  $('#back').onclick = ()=>{ history.pushState('', '', location.pathname + location.search + '#trabajos'); closeCase(); };
+  const b = $('#board'); if(b) b.onclick = ()=>{ const lb=$('#lb'); lb.querySelector('img').src=u; lb.classList.add('open'); };
+  bindCursor(); $('#back').focus({preventScroll:true});
+}
+function closeCase(){ const el=$('#case'); if(!el.classList.contains('open')) return; el.classList.remove('open'); document.body.style.overflow=''; document.title='Florencia Saiegh — Publicidad · Estrategia + Creatividad'; }
+function route(){ const m = location.hash.match(/^#\/(.+)/); m ? openCase(m[1]) : closeCase(); }
+
+function reveal(){
+  const cards = document.querySelectorAll('.card:not(.in)');
+  if(!('IntersectionObserver' in window)) return cards.forEach(c=>c.classList.add('in'));
+  const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+  cards.forEach((c,i)=>{ c.style.transitionDelay = (i%3)*90+'ms'; io.observe(c); });
+}
+
+const cur = $('.cursor');
+addEventListener('pointermove', e=>{ cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px'; }, {passive:true});
+function bindCursor(){
+  document.querySelectorAll('[data-cursor]').forEach(el=>{
+    el.onpointerenter = ()=>{ cur.textContent = el.dataset.cursor; cur.classList.add('big'); };
+    el.onpointerleave = ()=>{ cur.textContent=''; cur.classList.remove('big'); };
+  });
+}
+
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{ lang=b.dataset.lang; try{localStorage.setItem('fs-lang',lang)}catch(e){} render(); });
+$('#lb').onclick = ()=>$('#lb').classList.remove('open');
+addEventListener('keydown', e=>{ if(e.key==='Escape'){ if($('#lb').classList.contains('open')) $('#lb').classList.remove('open'); else if($('#case').classList.contains('open')) $('#back').click(); }});
+addEventListener('hashchange', ()=>{ route(); cur.classList.remove('big'); cur.textContent=''; });
+$('#copy').onclick = async ()=>{ try{ await navigator.clipboard.writeText('saieghflor@gmail.com'); $('#copy').textContent=t('contact.copied'); setTimeout(()=>$('#copy').textContent=t('contact.copy'),1600);}catch(e){ location.href='mailto:saieghflor@gmail.com'; } };
+$('#yr').textContent = new Date().getFullYear();
+if(ok(IMG.cv)) document.querySelector('.portrait .crop').style.setProperty('--cv',`url("${IMG.cv}")`); else document.querySelector('.portrait .crop').remove();
+render();
+</script>
+</body>
+</html>
