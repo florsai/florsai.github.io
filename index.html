@@ -523,7 +523,7 @@ const CV = {
 
 /* ============ APP ============ */
 let lang = 'es';
-try{ lang = localStorage.getItem('fs-lang') || ((navigator.language||'es').startsWith('es')?'es':'en'); }catch(e){}
+try{ lang = localStorage.getItem('fs-lang') || 'es'; }catch(e){}
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const t = k => UI[lang][k] ?? k;
