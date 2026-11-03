@@ -184,6 +184,62 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 .next b{display:block;font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(40px,8vw,120px);text-transform:uppercase;line-height:.9;margin-top:10px;transition:letter-spacing .4s}
 .next:hover b{letter-spacing:.02em}
 
+/* PHOTOGRAPHY */
+.photo{background:var(--ink);color:var(--paper);margin-top:clamp(64px,9vw,140px);padding-bottom:clamp(56px,8vw,120px)}
+.photo .sec-head p{color:#B9B3A8}
+.photo + .about{margin-top:0;border-top:2px solid #2A2A2A}
+.doc{display:grid;grid-template-columns:1.35fr 1fr;border-radius:var(--radius);overflow:hidden;background:var(--ink-2);color:var(--paper);text-decoration:none;border:1.5px solid #2A2A2A;transform:translateY(24px);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s}
+.doc.in{transform:none;opacity:1}
+.doc-img{overflow:hidden;position:relative;min-height:340px}
+.doc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.doc:hover .doc-img img{transform:scale(1.05)}
+.doc-body{padding:clamp(24px,3.5vw,48px);display:flex;flex-direction:column;gap:14px;justify-content:flex-end}
+.doc-body .eyebrow{color:var(--lime)}
+.doc h3{font-size:clamp(40px,5.2vw,80px)}
+.doc .lead{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(19px,1.8vw,26px);line-height:1.2}
+.doc .meta{font-size:14px;color:#B9B3A8}
+.doc .btn{align-self:flex-start;margin-top:8px}
+.doc:focus-visible,.strip a:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+@media (max-width:860px){.doc{grid-template-columns:1fr}.doc-img{min-height:0;aspect-ratio:4/3}}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,16px);margin-top:clamp(8px,1.2vw,16px)}
+.strip a{aspect-ratio:1;border-radius:14px;overflow:hidden;display:block}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .4s;opacity:.85}
+.strip a:hover img{transform:scale(1.06);opacity:1}
+.ex-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap;margin:clamp(64px,8vw,120px) 0 clamp(8px,1vw,12px);padding-top:clamp(32px,4vw,56px);border-top:2px solid #2A2A2A}
+.ex-intro h3{font-size:clamp(34px,5vw,72px)}
+.ex-intro p{max-width:420px;color:#B9B3A8}
+.ex-group{padding-top:clamp(36px,4.5vw,64px)}
+.ex-gh{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline;margin-bottom:clamp(16px,2vw,24px)}
+.ex-gh .eyebrow{color:var(--lime)}
+.ex-gh h4{font-family:var(--display);font-stretch:110%;font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.1}
+.ex-gh p{grid-column:2;color:#B9B3A8;font-size:15.5px;max-width:640px}
+.set{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:clamp(8px,1.2vw,16px)}
+.set+.set{margin-top:clamp(16px,2vw,28px)}
+.set figure{display:grid;gap:8px;align-content:start}
+.set button{display:block;border-radius:12px;overflow:hidden;aspect-ratio:3/2;background:var(--ink-2);cursor:zoom-in}
+.set img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.set .tall img{object-fit:contain}
+.set button:hover img{transform:scale(1.04)}
+.set button:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.set figcaption{display:grid;gap:2px;font-size:14px;line-height:1.35}
+.set figcaption b{font-weight:600}
+.set figcaption span{color:#8A857C;font-size:13px;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.set[style*="--n:3"]{grid-template-columns:1fr 1fr}.set[style*="--n:3"] figure:first-child{grid-column:1/-1}}
+@media (max-width:480px){.set figcaption{font-size:13px}.set figcaption span{font-size:12px}}
+/* SERIES VIEW */
+.case.dark{background:var(--ink);color:var(--paper)}
+.statement{max-width:780px;padding:clamp(36px,5vw,72px) 0 clamp(20px,3vw,40px)}
+.statement p{font-size:clamp(17px,1.5vw,20px);color:#D9D4CA}
+.statement p+p{margin-top:16px}
+.seq{display:grid;gap:clamp(28px,5vw,72px);padding:clamp(20px,3vw,40px) 0}
+.seq figure{display:grid;justify-items:center;gap:10px}
+.seq img{max-width:100%;max-height:88vh;width:auto;height:auto;border-radius:6px;cursor:zoom-in}
+.seq figcaption{font-family:var(--display);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.14em;color:#8A857C}
+.next.back{background:var(--lime);color:var(--ink)}
+.next.back small{color:var(--ink)}
+.lb.fit.open{display:grid;place-items:center}
+.lb.fit img{width:auto;max-width:100%;max-height:100vh}
+
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;z-index:100;background:rgba(13,13,13,.95);display:none;overflow:auto;cursor:zoom-out}
 .lb.open{display:block}
@@ -194,7 +250,7 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 .cursor{position:fixed;left:0;top:0;z-index:200;width:14px;height:14px;border-radius:50%;background:var(--lime);pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;mix-blend-mode:difference;display:grid;place-items:center;font-size:0;font-weight:800;color:var(--ink)}
 .cursor.big{width:96px;height:96px;mix-blend-mode:normal;font-size:13px;font-family:var(--display);font-stretch:110%;text-transform:uppercase;letter-spacing:.06em}
 @media (hover:none),(pointer:coarse){.cursor{display:none}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .row span{transform:none}.card{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 .row span{transform:none}.card,.doc{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -204,6 +260,7 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
   <a class="logo" href="#top">FLOR SAI</a>
   <ul>
     <li class="hide-sm"><a href="#trabajos" data-i18n="nav.work">Trabajos</a></li>
+    <li class="hide-sm"><a href="#fotografia" data-i18n="nav.photo">Fotografía</a></li>
     <li class="hide-sm"><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
     <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
     <li><div class="lang" role="group" aria-label="Idioma / Language"><button data-lang="es" aria-pressed="true">ES</button><button data-lang="en" aria-pressed="false">EN</button></div></li>
@@ -242,6 +299,17 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
     </div>
     <div class="featured" id="featured"></div>
     <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="fotografia" class="photo" aria-labelledby="t-photo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="t-photo" data-i18n="photo.title">Fotografía</h2>
+        <p data-i18n="photo.sub">Fuera de las campañas, también miro a través de la cámara: proyectos personales y ejercicios de fotografía.</p>
+      </div>
+      <div id="series"></div>
+      <div id="exercises"></div>
+    </div>
   </section>
 
   <section id="sobre-mi" class="about" aria-labelledby="t-about">
@@ -318,7 +386,9 @@ const ok = u => u && !u.startsWith('%%');
 /* ============ TEXTOS DE INTERFAZ ============ */
 const UI = {
   es:{
-    "nav.work":"Trabajos","nav.about":"Sobre mí","nav.contact":"Contacto",
+    "nav.work":"Trabajos","nav.photo":"Fotografía","nav.about":"Sobre mí","nav.contact":"Contacto",
+    "photo.title":"Fotografía","photo.sub":"Fuera de las campañas, también miro a través de la cámara: proyectos personales y ejercicios de fotografía.",
+    "photo.cta":"Ver la serie →","photo.count":"fotos","photo.view":"Ver serie","photo.ex":"Ejercicios","photo.exSub":"Prácticas técnicas del Taller de Fotografía (Universidad de Palermo): la misma escena resuelta con distintos ajustes de cámara.","photo.zoom":"Ampliar","photo.end":"Volver a Fotografía","photo.endKick":"Fin de la serie",
     "hero.l1":"Estrategia","hero.l2":"creatividad",
     "hero.p":"Estudiante de la <strong>Licenciatura en Publicidad</strong> en la Universidad de Palermo. Me interesa especialmente el desarrollo de conceptos creativos, la estrategia y la construcción de campañas.",
     "hero.cta1":"Ver trabajos ↓","hero.cta2":"Hablemos",
@@ -337,7 +407,9 @@ const UI = {
     "case.zoom":"Ver en grande ⤢","case.next":"Siguiente caso","card.cta":"Ver caso"
   },
   en:{
-    "nav.work":"Work","nav.about":"About","nav.contact":"Contact",
+    "nav.work":"Work","nav.photo":"Photography","nav.about":"About","nav.contact":"Contact",
+    "photo.title":"Photography","photo.sub":"Beyond campaigns, I also look through the camera: personal projects and photography exercises.",
+    "photo.cta":"View the series →","photo.count":"photos","photo.view":"View series","photo.ex":"Exercises","photo.exSub":"Technical exercises from the Photography Workshop (Universidad de Palermo): the same scene shot with different camera settings.","photo.zoom":"Enlarge","photo.end":"Back to Photography","photo.endKick":"End of series",
     "hero.l1":"Strategy","hero.l2":"creativity",
     "hero.p":"<strong>Advertising</strong> student at Universidad de Palermo (Buenos Aires). I'm especially drawn to developing creative concepts, strategy and building campaigns.",
     "hero.cta1":"See work ↓","hero.cta2":"Let's talk",
@@ -529,6 +601,80 @@ const CV = {
   }
 };
 
+/* ============ FOTOGRAFÍA ============
+   series: proyectos fotográficos (se abren a pantalla completa en #/<id>).
+   exercises: ejercicios sueltos (grilla). Se muestra solo si tiene fotos.
+   Las imágenes viven en img/fotografia/ (no dependen de Adobe Portfolio). */
+const FOTO = {
+  series:[{
+    id:"fauna-urbana", dir:"img/fotografia/", cover:"fauna-13.jpg", strip:["fauna-07.jpg","fauna-03.jpg","fauna-10.jpg","fauna-17.jpg"],
+    es:{ title:"Fauna urbana", kind:"Fotodocumental · Proyecto personal", meta:"Taller de Fotografía · Universidad de Palermo · 2026",
+      lead:"¿Cuánta libertad cabe detrás de un alambrado?",
+      text:["Este proyecto propone realizar una especie de documental fotográfico sobre la fauna que habita distintos espacios de la Ciudad de Buenos Aires y su convivencia con el entorno urbano. La serie busca registrar animales que viven en parques, reservas, jardines y otros espacios que, según presentan las propias instituciones, no funcionan como zoológicos y dicen tener condiciones de libertad, cuidado y respeto por la fauna.",
+            "A través de las imágenes, busco mostrar cómo estos animales se relacionan con espacios atravesados por la presencia humana y hasta qué punto esa idea de “libertad” se refleja realmente en su entorno. El proyecto no busca únicamente retratar animales, sino documentar la relación entre naturaleza, ciudad, cuidado y límites dentro de espacios que se presentan como alternativas al zoológico tradicional."] },
+    en:{ title:"Urban Wildlife", kind:"Photo documentary · Personal project", meta:"Photography Workshop · Universidad de Palermo · 2026",
+      lead:"How much freedom fits behind a fence?",
+      text:["This project sets out to create a kind of photographic documentary about the wildlife living in different spaces across the City of Buenos Aires and how it coexists with the urban environment. The series records animals that live in parks, reserves, gardens and other spaces that, as the institutions themselves present it, do not work as zoos and claim to offer conditions of freedom, care and respect for wildlife.",
+            "Through these images, I try to show how these animals relate to spaces shaped by human presence, and to what extent that idea of “freedom” is actually reflected in their surroundings. The project isn't only about portraying animals: it documents the relationship between nature, city, care and limits inside spaces that present themselves as alternatives to the traditional zoo."] },
+    photos:[
+      ["fauna-01.jpg","Un pájaro junto a un nido de tela sobre un aparato en la pared, visto a través de una reja","A bird next to a fabric nest on a wall unit, seen through a grid"],
+      ["fauna-02.jpg","Visitantes bajo una estructura de hierro, con una jirafa al fondo","Visitors under an iron structure, with a giraffe in the background"],
+      ["fauna-03.jpg","Un pavo real con la cola desplegada cruza entre visitantes","A peacock with its tail fanned out walks among visitors"],
+      ["fauna-04.jpg","Aves rapaces en un recinto cerrado y oscuro","Birds of prey in a dark, enclosed pen"],
+      ["fauna-05.jpg","Un pato negro bebe de un charco junto a una rejilla","A black duck drinks from a puddle next to a drain"],
+      ["fauna-06.jpg","Un animal grande dentro de un corral de madera","A large animal inside a wooden pen"],
+      ["fauna-07.jpg","Flamencos y cormoranes en una laguna artificial","Flamingos and cormorants in an artificial pond"],
+      ["fauna-08.jpg","Jirafas dentro de un edificio con columnas","Giraffes inside a building with columns"],
+      ["fauna-09.jpg","Un animal casi escondido entre la vegetación, detrás del alambrado","An animal almost hidden in the vegetation, behind a fence"],
+      ["fauna-10.jpg","Una jirafa come de un comedero colgante","A giraffe eats from a hanging feeder"],
+      ["fauna-11.jpg","Un ave posada sobre una baranda frente a un edificio","A bird perched on a railing in front of a building"],
+      ["fauna-12.jpg","Una yegua y su potrillo en un corral","A mare and her foal in a pen"],
+      ["fauna-13.jpg","Una oveja se asoma por el alambrado","A sheep peers through the fence"],
+      ["fauna-14.jpg","Una oveja detrás del alambrado","A sheep behind the fence"],
+      ["fauna-15.jpg","Una oveja con collar rojo junto a otra","A sheep with a red collar next to another"],
+      ["fauna-16.jpg","Una oveja come detrás de un alambre","A sheep eats behind a wire fence"],
+      ["fauna-17.jpg","Corderos junto a bebederos azules en un corral","Lambs by blue water troughs in a pen"]
+    ]
+  }],
+  /* exercises: grupos por técnica. Cada "set" es una fila de comparación (2 o 3 fotos).
+     Foto: [archivo, etiqueta {es,en}, datos técnicos, alt {es,en}, tall?] */
+  exercises:{ dir:"img/fotografia/", groups:[
+    { es:{t:"Profundidad de campo", n:"Mismo encuadre, distinto diafragma: con f/5–5.6 el fondo se desenfoca y el sujeto se separa; con f/25–29 casi toda la escena queda nítida."},
+      en:{t:"Depth of field", n:"Same frame, different aperture: at f/5–5.6 the background blurs and the subject stands out; at f/25–29 almost the whole scene stays sharp."},
+      sets:[
+        [["ej-04.jpg",{es:"Poca profundidad",en:"Shallow depth"},"ISO 100 · f/5 · 1/60 s",{es:"Respaldo de hierro en foco con el fondo desenfocado",en:"Iron chair back in focus with a blurred background"}],
+         ["ej-03.jpg",{es:"Mucha profundidad",en:"Deep focus"},"ISO 100 · f/29 · 1/80 s",{es:"Respaldo de hierro con el fondo nítido",en:"Iron chair back with a sharp background"}]],
+        [["ej-05.jpg",{es:"Poca profundidad",en:"Shallow depth"},"ISO 100 · f/5.6 · 1/250 s",{es:"Flor de azalea en foco con hojas desenfocadas",en:"Azalea flower in focus with blurred leaves"}],
+         ["ej-06.jpg",{es:"Mucha profundidad",en:"Deep focus"},"ISO 100 · f/25 · 1/20 s",{es:"Flor de azalea con todo el follaje nítido",en:"Azalea flower with all the foliage sharp"}]],
+        [["ej-07.jpg",{es:"Poca profundidad",en:"Shallow depth"},"ISO 200 · f/5.6 · 1/250 s",{es:"Flores blancas en foco sobre un fondo desenfocado",en:"White flowers in focus over a blurred background"}],
+         ["ej-08.jpg",{es:"Mucha profundidad",en:"Deep focus"},"ISO 200 · f/29 · 1/20 s",{es:"Flores blancas con el arbusto entero nítido",en:"White flowers with the whole bush sharp"}]]
+      ]},
+    { es:{t:"Velocidad de obturación", n:"Cómo se registra el movimiento según la velocidad: congelarlo, dejar su rastro o seguirlo con la cámara."},
+      en:{t:"Shutter speed", n:"How motion is recorded depending on shutter speed: freezing it, leaving a trail, or panning along with it."},
+      sets:[
+        [["ej-10.jpg",{es:"Congelado",en:"Frozen motion"},"ISO 100 · f/7.1 · 1/500 s",{es:"Un perro corriendo, congelado en el aire",en:"A running dog, frozen mid-air"},true],
+         ["ej-11.jpg",{es:"Congelado",en:"Frozen motion"},"ISO 100 · f/9 · 1/320 s",{es:"Un ganso caminando sobre el pasto",en:"A goose walking on the grass"}]],
+        [["ej-12.jpg",{es:"Traza de movimiento",en:"Motion trail"},"ISO 100 · f/25 · 1/10 s",{es:"Un auto barrido por el movimiento sobre una avenida nítida",en:"A car blurred by motion on a sharp avenue"}],
+         ["ej-13.jpg",{es:"Traza de movimiento",en:"Motion trail"},"ISO 100 · f/25 · 1/10 s",{es:"Un auto rojo que casi desaparece en el movimiento",en:"A red car that almost vanishes into motion"}]],
+        [["ej-14.jpg",{es:"Barrido",en:"Panning"},"ISO 100 · f/22 · 1/60 s",{es:"Una camioneta nítida con el fondo barrido",en:"A sharp van against a streaked background"}],
+         ["ej-15.jpg",{es:"Barrido",en:"Panning"},"ISO 100 · f/22 · 1/60 s",{es:"Un auto nítido con el fondo barrido",en:"A sharp car against a streaked background"}]]
+      ]},
+    { es:{t:"Balance de blancos", n:"La misma escena bajo una fuente de luz, con distintos ajustes de balance de blancos en la cámara."},
+      en:{t:"White balance", n:"The same scene under one light source, with different white balance settings on the camera."},
+      sets:[
+        [["ej-17.jpg",{es:"Luz artificial blanca · ajuste tungsteno",en:"White artificial light · tungsten setting"},"",{es:"Objeto de cerámica con tono frío",en:"Ceramic object with a cool tone"}],
+         ["ej-18.jpg",{es:"Luz artificial blanca · ajuste nublado",en:"White artificial light · cloudy setting"},"",{es:"Objeto de cerámica con tono cálido",en:"Ceramic object with a warm tone"}],
+         ["ej-19.jpg",{es:"Luz artificial blanca · ajuste fluorescente",en:"White artificial light · fluorescent setting"},"",{es:"Objeto de cerámica con tono azulado",en:"Ceramic object with a bluish tone"}]],
+        [["ej-20.jpg",{es:"Sol de mediodía · ajuste soleado",en:"Midday sun · daylight setting"},"",{es:"Barco de juguete sobre un pedestal, tono neutro",en:"Toy ship on a plinth, neutral tone"}],
+         ["ej-21.jpg",{es:"Sol de mediodía · ajuste nublado",en:"Midday sun · cloudy setting"},"",{es:"Barco de juguete sobre un pedestal, tono cálido",en:"Toy ship on a plinth, warm tone"}],
+         ["ej-22.jpg",{es:"Sol de mediodía · ajuste tungsteno",en:"Midday sun · tungsten setting"},"",{es:"Barco de juguete sobre un pedestal, tono frío",en:"Toy ship on a plinth, cool tone"}]],
+        [["ej-23.jpg",{es:"Día nublado · ajuste nublado",en:"Overcast day · cloudy setting"},"",{es:"Estuche blanco sobre una superficie tejida, tono neutro",en:"White case on a woven surface, neutral tone"}],
+         ["ej-24.jpg",{es:"Día nublado · ajuste soleado",en:"Overcast day · daylight setting"},"",{es:"Estuche blanco sobre una superficie tejida, tono levemente frío",en:"White case on a woven surface, slightly cool tone"}],
+         ["ej-25.jpg",{es:"Día nublado · ajuste tungsteno",en:"Overcast day · tungsten setting"},"",{es:"Estuche blanco sobre una superficie tejida, tono azul",en:"White case on a woven surface, blue tone"}]]
+      ]}
+  ]}
+};
+
 /* ============ APP ============ */
 let lang = 'es';
 try{ lang = localStorage.getItem('fs-lang') || 'es'; }catch(e){}
@@ -563,17 +709,57 @@ function render(){
   $('#awards').innerHTML = c.awards.map(a=>`<span class="chip lime">★ ${esc(a)}</span>`).join('');
   $('#skills').innerHTML = c.skills.map(a=>`<span class="chip">${esc(a)}</span>`).join('');
   $('#langs').innerHTML = c.langs.map(a=>`<span class="chip">${esc(a)}</span>`).join('');
+  renderPhoto();
   reveal(); bindCursor(); route();
 }
 
 function blk(n,key,paras,extra=''){ if(!paras||!paras.length) return '';
   return `<div class="blk ${extra}"><h3 class="eyebrow"><i>${n}</i>${esc(t(key))}</h3>${paras.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`; }
 
+function renderPhoto(){
+  $('#series').innerHTML = FOTO.series.map(s=>{ const d=s[lang];
+    return `<a class="doc" href="#/${s.id}" data-cursor="${esc(t('photo.view'))}">
+      <div class="doc-img"><img src="${s.dir+s.cover}" alt="${esc(d.title)}" loading="lazy"></div>
+      <div class="doc-body"><p class="eyebrow">${esc(d.kind)}</p><h3 class="display">${esc(d.title)}</h3>
+        <p class="lead">${esc(d.lead)}</p><p class="meta">${esc(d.meta)} · ${s.photos.length} ${esc(t('photo.count'))}</p>
+        <span class="btn btn-lime">${esc(t('photo.cta'))}</span></div></a>
+    <div class="strip">${s.strip.map(f=>{const ph=s.photos.find(x=>x[0]===f)||[f,'',''];return `<a href="#/${s.id}" tabindex="-1" data-cursor="${esc(t('photo.view'))}"><img src="${s.dir+f}" alt="${esc(lang==='es'?ph[1]:ph[2])}" loading="lazy"></a>`}).join('')}</div>`;
+  }).join('');
+  const ex = FOTO.exercises;
+  $('#exercises').innerHTML = ex.groups.length ? `<div class="ex-intro"><h3 class="display">${esc(t('photo.ex'))}</h3><p>${esc(t('photo.exSub'))}</p></div>` + ex.groups.map((g,gi)=>`
+    <div class="ex-group"><div class="ex-gh"><span class="eyebrow">${String(gi+1).padStart(2,'0')}</span><h4>${esc(g[lang].t)}</h4><p>${esc(g[lang].n)}</p></div>
+    ${g.sets.map(set=>`<div class="set" style="--n:${set.length}">${set.map(([f,lab,data,alt,tall])=>`<figure${tall?' class="tall"':''}><button type="button" data-src="${ex.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${ex.dir+f}" alt="${esc(alt[lang])}" loading="lazy"></button><figcaption><b>${esc(lab[lang])}</b>${data?`<span>${esc(data)}</span>`:''}</figcaption></figure>`).join('')}</div>`).join('')}</div>`).join('') : '';
+  document.querySelectorAll('.set button').forEach(b=>b.onclick=()=>openLb(b.dataset.src, b.querySelector('img').alt, true));
+}
+function openLb(src, alt='', fit=false){ const lb=$('#lb'), im=lb.querySelector('img'); im.src=src; im.alt=alt; lb.classList.toggle('fit', fit); lb.classList.add('open'); }
+
+function openSeries(s){
+  const d = s[lang], el = $('#case'), n = s.photos.length, pad = x=>String(x).padStart(2,'0');
+  el.style.cssText = `--b:#0D0D0D;--bt:#F2EEE6`; el.classList.add('dark');
+  el.innerHTML = `
+  <div class="case-bar"><button type="button" id="back">${esc(t('case.back'))}</button><span class="logo">FLOR SAI</span></div>
+  <header class="case-hero"><div class="wrap">
+    <div class="kick"><span class="pill award">${esc(d.kind)}</span><span class="pill">${esc(d.meta)}</span></div>
+    <h2 class="display" id="case-title">${esc(d.title)}</h2>
+    <p class="quote">${esc(d.lead)}</p>
+  </div></header>
+  <div class="wrap">
+    <div class="statement">${d.text.map(x=>`<p>${esc(x)}</p>`).join('')}</div>
+    <div class="seq">${s.photos.map((ph,i)=>`<figure><img src="${s.dir+ph[0]}" alt="${esc(lang==='es'?ph[1]:ph[2])}" loading="lazy" data-cursor="${esc(t('photo.zoom'))}"><figcaption>${pad(i+1)} / ${pad(n)}</figcaption></figure>`).join('')}</div>
+  </div>
+  <a class="next back" href="#fotografia"><small class="eyebrow">${esc(t('photo.endKick'))}</small><b>${esc(t('photo.end'))}</b></a>`;
+  el.classList.add('open'); el.scrollTop = 0; document.body.style.overflow='hidden';
+  document.title = `${d.title} — Florencia Saiegh`;
+  $('#back').onclick = ()=>{ history.pushState('', '', location.pathname + location.search + '#fotografia'); closeCase(); };
+  el.querySelectorAll('.seq img').forEach(im=>im.onclick=()=>openLb(im.src, im.alt, true));
+  bindCursor(); $('#back').focus({preventScroll:true});
+}
+
 function openCase(id){
   const i = P.findIndex(p=>p.id===id); if(i<0) return closeCase();
   const p = P[i], d = p[lang], nx = P[(i+1)%P.length], u = IMG[p.img], v = VID[p.vid];
   const el = $('#case');
-  el.style.cssText = `--b:${p.b};--bt:${p.bt}`;
+  el.style.cssText = `--b:${p.b};--bt:${p.bt}`; el.classList.remove('dark');
   el.innerHTML = `
   <div class="case-bar"><button type="button" id="back">${esc(t('case.back'))}</button><span class="logo">FLOR SAI</span></div>
   <header class="case-hero"><div class="wrap">
@@ -594,14 +780,14 @@ function openCase(id){
   el.classList.add('open'); el.scrollTop = 0; document.body.style.overflow='hidden';
   document.title = `${p.brand} — Florencia Saiegh`;
   $('#back').onclick = ()=>{ history.pushState('', '', location.pathname + location.search + '#trabajos'); closeCase(); };
-  const b = $('#board'); if(b) b.onclick = ()=>{ const lb=$('#lb'); lb.querySelector('img').src=u; lb.classList.add('open'); };
+  const b = $('#board'); if(b) b.onclick = ()=>openLb(u, `${p.brand} — ${d.title}`);
   bindCursor(); $('#back').focus({preventScroll:true});
 }
 function closeCase(){ const el=$('#case'); if(!el.classList.contains('open')) return; el.classList.remove('open'); document.body.style.overflow=''; document.title='Florencia Saiegh — Publicidad · Estrategia + Creatividad'; }
-function route(){ const m = location.hash.match(/^#\/(.+)/); m ? openCase(m[1]) : closeCase(); }
+function route(){ const m = location.hash.match(/^#\/(.+)/); if(!m) return closeCase(); const s = FOTO.series.find(x=>x.id===m[1]); s ? openSeries(s) : openCase(m[1]); }
 
 function reveal(){
-  const cards = document.querySelectorAll('.card:not(.in)');
+  const cards = document.querySelectorAll('.card:not(.in),.doc:not(.in)');
   if(!('IntersectionObserver' in window)) return cards.forEach(c=>c.classList.add('in'));
   const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
   cards.forEach((c,i)=>{ c.style.transitionDelay = (i%3)*90+'ms'; io.observe(c); });
