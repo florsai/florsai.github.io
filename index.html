@@ -185,6 +185,8 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 @media (max-width:520px){.stories{grid-template-columns:repeat(2,1fr)}}
 .stories button{all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;aspect-ratio:9/16;background:var(--paper-2);box-shadow:0 1px 0 rgba(0,0,0,.08)}
 .stories button:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.stories .vid{border-radius:12px;overflow:hidden;aspect-ratio:9/16;background:var(--paper-2)}
+.stories video{width:100%;height:100%;object-fit:cover;display:block}
 .stories img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .stories button:hover img{transform:scale(1.04)}
 .real{margin-bottom:clamp(16px,2vw,28px)}
@@ -458,19 +460,25 @@ const P = [
      Las historias viven en img/bypapas/ (exportadas de Canva). */
   id:"by-papas", real:true, b:"#1E7A34", bt:"#FFF6D6", pos:"50% 50%",
   brand:"By Papas", dir:"img/bypapas/",
-  reel:["historia-01.jpg","historia-03.jpg","historia-06.jpg","historia-07.jpg"],
+  reel:["historia-01.jpg","historia-04.jpg","historia-08.jpg","historia-09.jpg"],
   links:[["Agencia The Olgas","https://www.instagram.com/agencia.theolgas/"],["@bypapasbelgian","https://www.instagram.com/bypapasbelgian/"]],
+  /* [imagen, alt es, alt en, video opcional (se reproduce en loop, sin sonido)] */
   gallery:[
     ["historia-01.jpg","Hamburguesa con el texto: Hoy es el Día del Sándwich y tenemos una duda existencial","Burger with the text: Today is Sandwich Day and we have an existential question"],
     ["historia-02.jpg","Manos tomando hamburguesas: ¿La hamburguesa es un sándwich?","Hands reaching for burgers: Is a burger a sandwich?"],
-    ["historia-03.jpg","Papas cortadas en el momento: Esto no sale de una bolsa congelada","Fries being cut on the spot: This doesn't come from a frozen bag"],
-    ["historia-04.jpg","Papas en la freidora: Hechas en el momento, papas de verdad","Fries in the fryer: Made to order, real fries"],
-    ["historia-05.jpg","Balde de papas con toppings: Decime la verdad, ¿cuánto te tenté?","Bucket of loaded fries: Be honest, how tempted are you?"],
-    ["historia-06.jpg","Balde de papas y hamburguesas: Viernes + amigos + By Papas, no hay margen de error","Bucket of fries and burgers: Friday + friends + By Papas, can't go wrong"],
-    ["historia-07.jpg","Cono de papas con salsas: Test, ¿qué salsa sos?","Cone of fries with sauces: Quiz, which sauce are you?"],
-    ["historia-08.jpg","Resultados del test: cheddar, barbacoa, mostaza y mayo","Quiz results: cheddar, barbecue, mustard and mayo"],
-    ["historia-09.jpg","Caja de preguntas: Contanos tu combinación ideal","Question box: Tell us your ideal combo"],
-    ["historia-10.jpg","Balde con hamburguesas: Los domingos está prohibido cocinar","Bucket with burgers: Cooking is banned on Sundays"]
+    ["historia-03.jpg","Hamburguesa: Lo único que sabemos es que es mucho mejor que un sándwich","Burger: All we know is it's way better than a sandwich"],
+    ["historia-04.jpg","Video de papas cortadas en el momento: Esto no sale de una bolsa congelada","Video of fries being cut on the spot: This doesn't come from a frozen bag","historia-04.mp4"],
+    ["historia-05.jpg","Video de papas en la freidora: Hechas en el momento, papas de verdad","Video of fries in the fryer: Made to order, real fries","historia-05.mp4"],
+    ["historia-06.jpg","Balde de papas con toppings: Decime la verdad, ¿cuánto te tenté?","Bucket of loaded fries: Be honest, how tempted are you?"],
+    ["historia-07.jpg","Hay una fórmula que nunca falla: viernes + amigos + By Papas = ?","There's a formula that never fails: Friday + friends + By Papas = ?"],
+    ["historia-08.jpg","Balde de papas y hamburguesas: No hay margen de error","Bucket of fries and burgers: Can't go wrong"],
+    ["historia-09.jpg","Cono de papas con salsas: Test, ¿qué salsa sos?","Cone of fries with sauces: Quiz, which sauce are you?"],
+    ["historia-10.jpg","Resultados del test: cheddar, barbacoa, mostaza y mayo","Quiz results: cheddar, barbecue, mustard and mayo"],
+    ["historia-11.jpg","Caja de preguntas: Contanos tu combinación ideal","Question box: Tell us your ideal combo"],
+    ["historia-12.jpg","Y acordate que todas están en By Papas","And remember, they're all at By Papas"],
+    ["historia-13.jpg","Feliz Día del Soltero: tu relación más estable es con By Papas","Happy Singles' Day: your most stable relationship is with By Papas"],
+    ["historia-14.jpg","A lo largo de los años nuestras papas nunca te ghostearon","Over the years our fries never ghosted you"],
+    ["historia-15.jpg","Cambiaste de pareja, de amigos y de boliche, pero de papas nunca","You changed partners, friends and clubs, but never your fries"]
   ],
   es:{ title:"By Papas — Historias de Instagram", quote:"“Esto no sale de una bolsa congelada.”",
     meta:"Agencia The Olgas · 2026",
@@ -841,7 +849,9 @@ function openCase(id){
     </div>
     <div class="case-tags">${d.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>
     ${ok(u)?`<div class="board" id="board" data-cursor="${esc(t('case.zoom'))}"><img src="${u}" alt="${esc(p.brand)} — ${esc(d.title)}"><span class="hint">${esc(t('case.zoom'))}</span></div>`:''}
-    ${p.gallery?`<h3 class="eyebrow" style="margin-bottom:16px">${esc(t('case.pieces'))}</h3><div class="stories">${p.gallery.map(([f,es_,en_])=>`<button type="button" data-src="${p.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${p.dir+f}" alt="${esc(lang==='es'?es_:en_)}" loading="lazy"></button>`).join('')}</div>`:''}
+    ${p.gallery?`<h3 class="eyebrow" style="margin-bottom:16px">${esc(t('case.pieces'))}</h3><div class="stories">${p.gallery.map(([f,es_,en_,vid])=>vid
+      ? `<div class="vid"><video src="${p.dir+vid}" poster="${p.dir+f}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(lang==='es'?es_:en_)}"></video></div>`
+      : `<button type="button" data-src="${p.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${p.dir+f}" alt="${esc(lang==='es'?es_:en_)}" loading="lazy"></button>`).join('')}</div>`:''}
     ${ok(v)?`<div class="video"><iframe src="${v}" title="${esc(p.brand)} — video" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>`:''}
   </div>
   <a class="next" href="#/${nx.id}"><small class="eyebrow">${esc(t('case.next'))} →</small><b>${esc(nx.brand)}</b></a>`;
