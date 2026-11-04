@@ -177,6 +177,25 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 .board{border-radius:var(--radius);overflow:hidden;background:var(--paper-2);cursor:zoom-in;position:relative}
 .board img{width:100%}
 .board .hint{position:absolute;right:14px;bottom:14px;background:var(--ink);color:var(--paper);border-radius:99px;padding:8px 14px;font-size:13px;font-weight:700}
+.case-hero .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.case-hero .links a{color:inherit;text-decoration:none;border-bottom:2px solid currentColor;font-weight:700;font-size:15px;padding-bottom:2px}
+.case-hero .links a:hover{opacity:.75}
+.stories{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,18px)}
+@media (max-width:900px){.stories{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.stories{grid-template-columns:repeat(2,1fr)}}
+.stories button{all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;aspect-ratio:9/16;background:var(--paper-2);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.stories button:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.stories img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.stories button:hover img{transform:scale(1.04)}
+.real{margin-bottom:clamp(16px,2vw,28px)}
+.card.wide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);align-items:stretch}
+.card.wide .body{padding:clamp(24px,3vw,44px);align-content:end;gap:10px}
+.card.wide .brand{font-size:clamp(34px,4.4vw,64px)}
+.card.wide .concept{font-size:clamp(18px,1.8vw,24px)}
+.card.wide .badge.real-b{position:static;justify-self:start;margin-bottom:auto}
+.card.wide .reel{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:clamp(16px,2vw,26px);background:var(--b)}
+.card.wide .reel img{aspect-ratio:9/16;border-radius:10px;object-position:50% 50%}
+@media (max-width:760px){.card.wide{grid-template-columns:1fr}.card.wide .reel{order:-1}}
 .video{margin-top:clamp(20px,3vw,36px);border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:#000}
 .video iframe{width:100%;height:100%;border:0}
 .next{display:block;text-decoration:none;margin-top:clamp(48px,7vw,100px);background:var(--ink);color:var(--paper);padding:clamp(32px,5vw,70px) var(--pad);text-align:left}
@@ -297,6 +316,7 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
       <h2 class="display" id="t-work" data-i18n="work.title">Trabajos</h2>
       <p data-i18n="work.sub">Campañas desde el insight hasta la pieza: investigación, estrategia, concepto creativo y ejecución.</p>
     </div>
+    <div class="real" id="real"></div>
     <div class="featured" id="featured"></div>
     <div class="grid" id="grid"></div>
   </section>
@@ -404,7 +424,8 @@ const UI = {
     "footer":"Hecho con estrategia + creatividad. Buenos Aires.",
     "lb.close":"Cerrar ✕",
     "case.back":"← Volver","case.challenge":"El desafío","case.idea":"La idea","case.campaign":"La campaña","case.role":"Mi rol",
-    "case.zoom":"Ver en grande ⤢","case.next":"Siguiente caso","card.cta":"Ver caso"
+    "case.zoom":"Ver en grande ⤢","case.next":"Siguiente caso","card.cta":"Ver caso",
+    "real.badge":"Trabajo real","case.client":"El cliente","case.work":"Qué hago","case.pieces":"Algunas historias de noviembre"
   },
   en:{
     "nav.work":"Work","nav.photo":"Photography","nav.about":"About","nav.contact":"Contact",
@@ -425,12 +446,47 @@ const UI = {
     "footer":"Made with strategy + creativity. Buenos Aires.",
     "lb.close":"Close ✕",
     "case.back":"← Back","case.challenge":"The challenge","case.idea":"The idea","case.campaign":"The campaign","case.role":"My role",
-    "case.zoom":"View full size ⤢","case.next":"Next case","card.cta":"View case"
+    "case.zoom":"View full size ⤢","case.next":"Next case","card.cta":"View case",
+    "real.badge":"Client work","case.client":"The client","case.work":"What I do","case.pieces":"A few stories from November"
   }
 };
 
 /* ============ PROYECTOS ============ */
 const P = [
+{
+  /* Trabajo real (no académico): se muestra en una tarjeta ancha arriba de los destacados.
+     Las historias viven en img/bypapas/ (exportadas de Canva). */
+  id:"by-papas", real:true, b:"#1E7A34", bt:"#FFF6D6", pos:"50% 50%",
+  brand:"By Papas", dir:"img/bypapas/",
+  reel:["historia-01.jpg","historia-03.jpg","historia-06.jpg","historia-07.jpg"],
+  links:[["Agencia The Olgas","https://www.instagram.com/agencia.theolgas/"],["@bypapasbelgian","https://www.instagram.com/bypapasbelgian/"]],
+  gallery:[
+    ["historia-01.jpg","Hamburguesa con el texto: Hoy es el Día del Sándwich y tenemos una duda existencial","Burger with the text: Today is Sandwich Day and we have an existential question"],
+    ["historia-02.jpg","Manos tomando hamburguesas: ¿La hamburguesa es un sándwich?","Hands reaching for burgers: Is a burger a sandwich?"],
+    ["historia-03.jpg","Papas cortadas en el momento: Esto no sale de una bolsa congelada","Fries being cut on the spot: This doesn't come from a frozen bag"],
+    ["historia-04.jpg","Papas en la freidora: Hechas en el momento, papas de verdad","Fries in the fryer: Made to order, real fries"],
+    ["historia-05.jpg","Balde de papas con toppings: Decime la verdad, ¿cuánto te tenté?","Bucket of loaded fries: Be honest, how tempted are you?"],
+    ["historia-06.jpg","Balde de papas y hamburguesas: Viernes + amigos + By Papas, no hay margen de error","Bucket of fries and burgers: Friday + friends + By Papas, can't go wrong"],
+    ["historia-07.jpg","Cono de papas con salsas: Test, ¿qué salsa sos?","Cone of fries with sauces: Quiz, which sauce are you?"],
+    ["historia-08.jpg","Resultados del test: cheddar, barbacoa, mostaza y mayo","Quiz results: cheddar, barbecue, mustard and mayo"],
+    ["historia-09.jpg","Caja de preguntas: Contanos tu combinación ideal","Question box: Tell us your ideal combo"],
+    ["historia-10.jpg","Balde con hamburguesas: Los domingos está prohibido cocinar","Bucket with burgers: Cooking is banned on Sundays"]
+  ],
+  es:{ title:"By Papas — Historias de Instagram", quote:"“Esto no sale de una bolsa congelada.”",
+    meta:"Agencia The Olgas · 2026",
+    tags:["Redes sociales","Instagram Stories","Planificación de contenidos","Calendario mensual","Diseño en Canva"],
+    client:["By Papas es una marca de papas fritas y hamburguesas con sedes en distintas ciudades del país. Desde la agencia The Olgas trabajamos su comunicación en Instagram."],
+    work:["Cada mes planifico las historias de Instagram de la marca, día por día. El calendario combina fechas especiales (el Día del Sándwich, el Día del Soltero, los fines de semana largos), producto, propuestas para interactuar con la comunidad —encuestas, tests, cajas de preguntas— y la presentación de cada sede.",
+          "Después diseño las historias en Canva, respetando la identidad visual y las tipografías de la marca, y buscando que las placas no se repitan de un día a otro."],
+    role:["Planificación mensual de las historias, propuesta de ideas y contenidos, y diseño de las piezas en Canva. Cada calendario pasa por la revisión de la agencia antes de publicarse."]},
+  en:{ title:"By Papas — Instagram Stories", quote:"“Esto no sale de una bolsa congelada.”", quoteSub:"(“This doesn't come from a frozen bag.”)",
+    meta:"The Olgas agency · 2026",
+    tags:["Social media","Instagram Stories","Content planning","Monthly calendar","Canva design"],
+    client:["By Papas is a fries-and-burgers brand with locations in several cities across Argentina. At The Olgas agency we handle its communication on Instagram."],
+    work:["Every month I plan the brand's Instagram stories, day by day. The calendar mixes special dates (Sandwich Day, Singles' Day, long weekends), product, ways to engage the community — polls, quizzes, question boxes — and a spotlight on each location.",
+          "Then I design the stories in Canva, staying true to the brand's visual identity and typefaces, and making sure the layouts don't repeat from one day to the next."],
+    role:["Monthly story planning, ideas and content proposals, and designing the assets in Canva. Each calendar is reviewed by the agency before it goes live."]}
+},
 {
   id:"lego-ba", img:"lego-ba", featured:true, b:"#FFCF00", bt:"#0D0D0D", pos:"50% 0%",
   brand:"LEGO BA",
@@ -561,6 +617,7 @@ const P = [
 const CV = {
   es:{
     exp:[
+      ["2026 — hoy","Agencia The Olgas","Redes sociales · By Papas","Planificación mensual y diseño en Canva de las historias de Instagram de By Papas."],
       ["2025 — 2026","Agencia Lader","Community Manager (práctica)","Gestión de redes sociales (Instagram, LinkedIn, TikTok) y calendarización de contenidos."],
       ["2024 — 2025","Key Market","Investigación de mercado","Trabajo de campo con metodología Mystery Shopper. Organización de la información relevada en Excel."],
       ["2021 — 2023","Estudio contable Torem","Estudio contable","Organización de archivos de clientes y actualización de cuentas corrientes. Traducción de balances e informes económico-financieros. Emisión de facturas en ARCA y carga de datos en el sistema contable Onvio."]
@@ -581,6 +638,7 @@ const CV = {
   },
   en:{
     exp:[
+      ["2026 — now","The Olgas agency","Social media · By Papas","Monthly planning and Canva design of By Papas' Instagram stories."],
       ["2025 — 2026","Lader Agency","Community Manager (internship)","Managed social media (Instagram, LinkedIn, TikTok) and content calendars."],
       ["2024 — 2025","Key Market","Market research","Field work using the Mystery Shopper methodology. Organized the collected data in Excel."],
       ["2021 — 2023","Estudio contable Torem","Accounting firm","Organized client files and updated current accounts. Translated balance sheets and financial reports. Issued invoices (ARCA) and entered data in the Onvio accounting system."]
@@ -693,6 +751,13 @@ function card(p){
     ${media(p)}
     <div class="body"><div class="brand">${esc(p.brand)}</div><div class="concept">${esc(d.quote)}</div><div class="meta">${esc(d.meta)}</div></div></a>`;
 }
+function wideCard(p){
+  const d = p[lang];
+  return `<a class="card wide" href="#/${p.id}" style="--b:${p.b};--bt:${p.bt}" data-cursor="${esc(t('card.cta'))}">
+    <span class="arrow">→</span>
+    <div class="body"><span class="badge real-b">${esc(t('real.badge'))}</span><div class="brand">${esc(p.brand)}</div><div class="concept">${esc(d.quote)}</div><div class="meta">${esc(d.meta)}</div></div>
+    <div class="reel">${p.reel.map(f=>{const g=p.gallery.find(x=>x[0]===f)||[f,'',''];return `<img src="${p.dir+f}" alt="${esc(lang==='es'?g[1]:g[2])}" loading="lazy">`}).join('')}</div></a>`;
+}
 function tl(list){return list.map(([y,h,s,p])=>`<li><span class="yr">${esc(y)}</span><div><h4>${esc(h)}<small>${esc(s)}</small></h4>${p?`<p>${esc(p)}</p>`:''}</div></li>`).join('')}
 
 function render(){
@@ -700,8 +765,9 @@ function render(){
   document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
   document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
   document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang));
+  $('#real').innerHTML = P.filter(p=>p.real).map(wideCard).join('');
   $('#featured').innerHTML = P.filter(p=>p.featured).map(card).join('');
-  $('#grid').innerHTML = P.filter(p=>!p.featured).map(card).join('');
+  $('#grid').innerHTML = P.filter(p=>!p.featured&&!p.real).map(card).join('');
   const q = P.filter(p=>!p[lang].plain).map(p=>`<span>${esc(p[lang].quote.replace(/[“”]/g,''))}</span>`).join('');
   $('#marquee').innerHTML = q + q;
   const c = CV[lang];
@@ -763,17 +829,19 @@ function openCase(id){
   el.innerHTML = `
   <div class="case-bar"><button type="button" id="back">${esc(t('case.back'))}</button><span class="logo">FLOR SAI</span></div>
   <header class="case-hero"><div class="wrap">
-    <div class="kick">${d.award?`<span class="pill award">★ ${esc(d.award)}</span>`:''}<span class="pill">${esc(d.meta)}</span></div>
+    <div class="kick">${p.real?`<span class="pill award">${esc(t('real.badge'))}</span>`:''}${d.award?`<span class="pill award">★ ${esc(d.award)}</span>`:''}<span class="pill">${esc(d.meta)}</span></div>
     <h2 class="display" id="case-title">${esc(p.brand)}</h2>
     <p class="quote">${esc(d.quote)}</p>${d.quoteSub?`<p class="tagline">${esc(d.quoteSub)}</p>`:''}
+    ${p.links?`<div class="links">${p.links.map(([l,h])=>`<a href="${h}" target="_blank" rel="noopener">${esc(l)} ↗</a>`).join('')}</div>`:''}
   </div></header>
   <div class="wrap">
     <div class="case-cols">
-      ${blk('01','case.challenge',d.challenge)}${blk('02','case.idea',d.idea)}
-      ${blk('03','case.campaign',d.campaign)}${blk('04','case.role',d.role,'role')}
+      ${p.real ? blk('01','case.client',d.client)+blk('02','case.work',d.work)+blk('03','case.role',d.role,'role')
+        : blk('01','case.challenge',d.challenge)+blk('02','case.idea',d.idea)+blk('03','case.campaign',d.campaign)+blk('04','case.role',d.role,'role')}
     </div>
     <div class="case-tags">${d.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>
     ${ok(u)?`<div class="board" id="board" data-cursor="${esc(t('case.zoom'))}"><img src="${u}" alt="${esc(p.brand)} — ${esc(d.title)}"><span class="hint">${esc(t('case.zoom'))}</span></div>`:''}
+    ${p.gallery?`<h3 class="eyebrow" style="margin-bottom:16px">${esc(t('case.pieces'))}</h3><div class="stories">${p.gallery.map(([f,es_,en_])=>`<button type="button" data-src="${p.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${p.dir+f}" alt="${esc(lang==='es'?es_:en_)}" loading="lazy"></button>`).join('')}</div>`:''}
     ${ok(v)?`<div class="video"><iframe src="${v}" title="${esc(p.brand)} — video" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>`:''}
   </div>
   <a class="next" href="#/${nx.id}"><small class="eyebrow">${esc(t('case.next'))} →</small><b>${esc(nx.brand)}</b></a>`;
@@ -781,6 +849,7 @@ function openCase(id){
   document.title = `${p.brand} — Florencia Saiegh`;
   $('#back').onclick = ()=>{ history.pushState('', '', location.pathname + location.search + '#trabajos'); closeCase(); };
   const b = $('#board'); if(b) b.onclick = ()=>openLb(u, `${p.brand} — ${d.title}`);
+  el.querySelectorAll('.stories button').forEach(x=>x.onclick=()=>openLb(x.dataset.src, x.querySelector('img').alt, true));
   bindCursor(); $('#back').focus({preventScroll:true});
 }
 function closeCase(){ const el=$('#case'); if(!el.classList.contains('open')) return; el.classList.remove('open'); document.body.style.overflow=''; document.title='Florencia Saiegh — Publicidad · Estrategia + Creatividad'; }
