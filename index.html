@@ -208,7 +208,7 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 /* PHOTOGRAPHY */
 .photo{background:var(--ink);color:var(--paper);margin-top:clamp(64px,9vw,140px);padding-bottom:clamp(56px,8vw,120px)}
 .photo .sec-head p{color:#B9B3A8}
-.photo + .about{margin-top:0;border-top:2px solid #2A2A2A}
+.about + .photo{margin-top:0;border-top:2px solid #2A2A2A;padding-top:1px}
 .doc{display:grid;grid-template-columns:1.35fr 1fr;border-radius:var(--radius);overflow:hidden;background:var(--ink-2);color:var(--paper);text-decoration:none;border:1.5px solid #2A2A2A;transform:translateY(24px);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .8s}
 .doc.in{transform:none;opacity:1}
 .doc-img{overflow:hidden;position:relative;min-height:340px}
@@ -229,6 +229,13 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 .ex-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap;margin:clamp(64px,8vw,120px) 0 clamp(8px,1vw,12px);padding-top:clamp(32px,4vw,56px);border-top:2px solid #2A2A2A}
 .ex-intro h3{font-size:clamp(34px,5vw,72px)}
 .ex-intro p{max-width:420px;color:#B9B3A8}
+.ex-link{display:flex;justify-content:space-between;align-items:center;gap:16px 32px;flex-wrap:wrap;margin-top:clamp(40px,5vw,72px);padding:clamp(22px,3vw,36px);border:1.5px solid #2A2A2A;border-radius:var(--radius);background:var(--ink-2);color:var(--paper);text-decoration:none;transition:border-color .3s}
+.ex-link:hover{border-color:var(--lime)}
+.ex-link h3{font-size:clamp(26px,3vw,42px)}
+.ex-link p{color:#B9B3A8;max-width:560px;margin-top:6px}
+.ex-link .btn{flex-shrink:0}
+.ex-link:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.ex-page .ex-group:first-child{padding-top:0}
 .ex-group{padding-top:clamp(36px,4.5vw,64px)}
 .ex-gh{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline;margin-bottom:clamp(16px,2vw,24px)}
 .ex-gh .eyebrow{color:var(--lime)}
@@ -281,8 +288,8 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
   <a class="logo" href="#top">FLOR SAI</a>
   <ul>
     <li class="hide-sm"><a href="#trabajos" data-i18n="nav.work">Trabajos</a></li>
-    <li class="hide-sm"><a href="#fotografia" data-i18n="nav.photo">Fotografía</a></li>
     <li class="hide-sm"><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+    <li class="hide-sm"><a href="#fotografia" data-i18n="nav.photo">Fotografía</a></li>
     <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
     <li><div class="lang" role="group" aria-label="Idioma / Language"><button data-lang="es" aria-pressed="true">ES</button><button data-lang="en" aria-pressed="false">EN</button></div></li>
   </ul>
@@ -323,17 +330,6 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
     <div class="grid" id="grid"></div>
   </section>
 
-  <section id="fotografia" class="photo" aria-labelledby="t-photo">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 class="display" id="t-photo" data-i18n="photo.title">Fotografía</h2>
-        <p data-i18n="photo.sub">Fuera de las campañas, también miro a través de la cámara: proyectos personales y ejercicios de fotografía.</p>
-      </div>
-      <div id="series"></div>
-      <div id="exercises"></div>
-    </div>
-  </section>
-
   <section id="sobre-mi" class="about" aria-labelledby="t-about">
     <div class="wrap">
       <div class="sec-head">
@@ -368,6 +364,17 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
           <div class="cv-block"><h3 class="eyebrow" data-i18n="cv.lang">Idiomas</h3><div class="chips" id="langs"></div></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="fotografia" class="photo" aria-labelledby="t-photo">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display" id="t-photo" data-i18n="photo.title">Fotografía</h2>
+        <p data-i18n="photo.sub">Fuera de las campañas, también miro a través de la cámara: proyectos personales y ejercicios de fotografía.</p>
+      </div>
+      <div id="series"></div>
+      <div id="exercises"></div>
     </div>
   </section>
 
@@ -410,7 +417,7 @@ const UI = {
   es:{
     "nav.work":"Trabajos","nav.photo":"Fotografía","nav.about":"Sobre mí","nav.contact":"Contacto",
     "photo.title":"Fotografía","photo.sub":"Fuera de las campañas, también miro a través de la cámara: proyectos personales y ejercicios de fotografía.",
-    "photo.cta":"Ver la serie →","photo.count":"fotos","photo.view":"Ver serie","photo.ex":"Ejercicios","photo.exSub":"Prácticas técnicas del Taller de Fotografía (Universidad de Palermo): la misma escena resuelta con distintos ajustes de cámara.","photo.zoom":"Ampliar","photo.end":"Volver a Fotografía","photo.endKick":"Fin de la serie",
+    "photo.cta":"Ver la serie →","photo.count":"fotos","photo.view":"Ver serie","photo.ex":"Ejercicios","photo.exSub":"Prácticas técnicas del Taller de Fotografía (Universidad de Palermo): la misma escena resuelta con distintos ajustes de cámara.","photo.zoom":"Ampliar","photo.end":"Volver a Fotografía","photo.endKick":"Fin de la serie","photo.exCta":"Ver ejercicios →","photo.exKind":"Taller de Fotografía · UP","photo.exEnd":"Fin de los ejercicios",
     "hero.l1":"Estrategia","hero.l2":"creatividad",
     "hero.p":"Estudiante de la <strong>Licenciatura en Publicidad</strong> en la Universidad de Palermo. Me interesa especialmente el desarrollo de conceptos creativos, la estrategia y la construcción de campañas.",
     "hero.cta1":"Ver trabajos ↓","hero.cta2":"Hablemos",
@@ -432,7 +439,7 @@ const UI = {
   en:{
     "nav.work":"Work","nav.photo":"Photography","nav.about":"About","nav.contact":"Contact",
     "photo.title":"Photography","photo.sub":"Beyond campaigns, I also look through the camera: personal projects and photography exercises.",
-    "photo.cta":"View the series →","photo.count":"photos","photo.view":"View series","photo.ex":"Exercises","photo.exSub":"Technical exercises from the Photography Workshop (Universidad de Palermo): the same scene shot with different camera settings.","photo.zoom":"Enlarge","photo.end":"Back to Photography","photo.endKick":"End of series",
+    "photo.cta":"View the series →","photo.count":"photos","photo.view":"View series","photo.ex":"Exercises","photo.exSub":"Technical exercises from the Photography Workshop (Universidad de Palermo): the same scene shot with different camera settings.","photo.zoom":"Enlarge","photo.end":"Back to Photography","photo.endKick":"End of series","photo.exCta":"View exercises →","photo.exKind":"Photography Workshop · UP","photo.exEnd":"End of exercises",
     "hero.l1":"Strategy","hero.l2":"creativity",
     "hero.p":"<strong>Advertising</strong> student at Universidad de Palermo (Buenos Aires). I'm especially drawn to developing creative concepts, strategy and building campaigns.",
     "hero.cta1":"See work ↓","hero.cta2":"Let's talk",
@@ -800,10 +807,30 @@ function renderPhoto(){
     <div class="strip">${s.strip.map(f=>{const ph=s.photos.find(x=>x[0]===f)||[f,'',''];return `<a href="#/${s.id}" tabindex="-1" data-cursor="${esc(t('photo.view'))}"><img src="${s.dir+f}" alt="${esc(lang==='es'?ph[1]:ph[2])}" loading="lazy"></a>`}).join('')}</div>`;
   }).join('');
   const ex = FOTO.exercises;
-  $('#exercises').innerHTML = ex.groups.length ? `<div class="ex-intro"><h3 class="display">${esc(t('photo.ex'))}</h3><p>${esc(t('photo.exSub'))}</p></div>` + ex.groups.map((g,gi)=>`
+  $('#exercises').innerHTML = ex.groups.length ? `<a class="ex-link" href="#/ejercicios" data-cursor="${esc(t('photo.view'))}">
+    <div><p class="eyebrow" style="color:var(--lime)">${esc(t('photo.exKind'))}</p><h3 class="display">${esc(t('photo.ex'))}</h3><p>${esc(t('photo.exSub'))}</p></div>
+    <span class="btn btn-lime">${esc(t('photo.exCta'))}</span></a>` : '';
+}
+function openExercises(){
+  const ex = FOTO.exercises, el = $('#case'); if(!ex.groups.length) return closeCase();
+  el.style.cssText = `--b:#0D0D0D;--bt:#F2EEE6`; el.classList.add('dark');
+  el.innerHTML = `
+  <div class="case-bar"><button type="button" id="back">${esc(t('case.back'))}</button><span class="logo">FLOR SAI</span></div>
+  <header class="case-hero"><div class="wrap">
+    <div class="kick"><span class="pill award">${esc(t('photo.exKind'))}</span></div>
+    <h2 class="display" id="case-title">${esc(t('photo.ex'))}</h2>
+    <p class="quote">${esc(t('photo.exSub'))}</p>
+  </div></header>
+  <div class="wrap ex-page">` + ex.groups.map((g,gi)=>`
     <div class="ex-group"><div class="ex-gh"><span class="eyebrow">${String(gi+1).padStart(2,'0')}</span><h4>${esc(g[lang].t)}</h4><p>${esc(g[lang].n)}</p></div>
-    ${g.sets.map(set=>`<div class="set" style="--n:${set.length}">${set.map(([f,lab,data,alt,tall])=>`<figure${tall?' class="tall"':''}><button type="button" data-src="${ex.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${ex.dir+f}" alt="${esc(alt[lang])}" loading="lazy"></button><figcaption><b>${esc(lab[lang])}</b>${data?`<span>${esc(data)}</span>`:''}</figcaption></figure>`).join('')}</div>`).join('')}</div>`).join('') : '';
-  document.querySelectorAll('.set button').forEach(b=>b.onclick=()=>openLb(b.dataset.src, b.querySelector('img').alt, true));
+    ${g.sets.map(set=>`<div class="set" style="--n:${set.length}">${set.map(([f,lab,data,alt,tall])=>`<figure${tall?' class="tall"':''}><button type="button" data-src="${ex.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${ex.dir+f}" alt="${esc(alt[lang])}" loading="lazy"></button><figcaption><b>${esc(lab[lang])}</b>${data?`<span>${esc(data)}</span>`:''}</figcaption></figure>`).join('')}</div>`).join('')}</div>`).join('') + `
+  </div>
+  <a class="next back" href="#fotografia"><small class="eyebrow">${esc(t('photo.exEnd'))}</small><b>${esc(t('photo.end'))}</b></a>`;
+  el.classList.add('open'); el.scrollTop = 0; document.body.style.overflow='hidden';
+  document.title = `${t('photo.ex')} — Florencia Saiegh`;
+  $('#back').onclick = ()=>{ history.pushState('', '', location.pathname + location.search + '#fotografia'); closeCase(); };
+  el.querySelectorAll('.set button').forEach(b=>b.onclick=()=>openLb(b.dataset.src, b.querySelector('img').alt, true));
+  bindCursor(); $('#back').focus({preventScroll:true});
 }
 function openLb(src, alt='', fit=false){ const lb=$('#lb'), im=lb.querySelector('img'); im.src=src; im.alt=alt; lb.classList.toggle('fit', fit); lb.classList.add('open'); }
 
@@ -863,7 +890,7 @@ function openCase(id){
   bindCursor(); $('#back').focus({preventScroll:true});
 }
 function closeCase(){ const el=$('#case'); if(!el.classList.contains('open')) return; el.classList.remove('open'); document.body.style.overflow=''; document.title='Florencia Saiegh — Publicidad · Estrategia + Creatividad'; }
-function route(){ const m = location.hash.match(/^#\/(.+)/); if(!m) return closeCase(); const s = FOTO.series.find(x=>x.id===m[1]); s ? openSeries(s) : openCase(m[1]); }
+function route(){ const m = location.hash.match(/^#\/(.+)/); if(!m) return closeCase(); if(m[1]==='ejercicios') return openExercises(); const s = FOTO.series.find(x=>x.id===m[1]); s ? openSeries(s) : openCase(m[1]); }
 
 function reveal(){
   const cards = document.querySelectorAll('.card:not(.in),.doc:not(.in)');
