@@ -183,7 +183,7 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 .stories{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,18px)}
 @media (max-width:900px){.stories{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.stories{grid-template-columns:repeat(2,1fr)}}
-.stories button{all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;aspect-ratio:9/16;background:var(--paper-2);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.stories button{all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;aspect-ratio:var(--ar,9/16);background:var(--paper-2);box-shadow:0 1px 0 rgba(0,0,0,.08)}
 .stories button:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
 .stories .vid{border-radius:12px;overflow:hidden;aspect-ratio:9/16;background:var(--paper-2)}
 .stories video{width:100%;height:100%;object-fit:cover;display:block}
@@ -195,8 +195,10 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 .card.wide .brand{font-size:clamp(34px,4.4vw,64px)}
 .card.wide .concept{font-size:clamp(18px,1.8vw,24px)}
 .card.wide .badge.real-b{position:static;justify-self:start;margin-bottom:auto}
+.real .card.wide+.card.wide{margin-top:clamp(16px,2vw,28px)}
+.card.wide.research .reel{align-content:center}
 .card.wide .reel{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:clamp(16px,2vw,26px);background:var(--b)}
-.card.wide .reel img{aspect-ratio:9/16;border-radius:10px;object-position:50% 50%}
+.card.wide .reel img{aspect-ratio:var(--ar,9/16);border-radius:10px;object-position:50% 50%}
 @media (max-width:760px){.card.wide{grid-template-columns:1fr}.card.wide .reel{order:-1}}
 .video{margin-top:clamp(20px,3vw,36px);border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;background:#000}
 .video iframe{width:100%;height:100%;border:0}
@@ -313,7 +315,7 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 <div class="marquee" aria-label="Conceptos de campaña"><div class="marquee-track" id="marquee"></div></div>
 
 <div class="stats" id="stats">
-  <div class="stat"><b>7</b><span data-i18n="stat.1">campañas desarrolladas</span></div>
+  <div class="stat"><b>8</b><span data-i18n="stat.1">campañas desarrolladas</span></div>
   <div class="stat"><b>3</b><span data-i18n="stat.2">trabajos premiados</span></div>
   <div class="stat"><b>1.º</b><span data-i18n="stat.3">puesto de la cátedra con LEGO Architecture BA</span></div>
   <div class="stat"><b>2</b><span data-i18n="stat.4">proyectos con clientes y briefs reales</span></div>
@@ -434,7 +436,8 @@ const UI = {
     "lb.close":"Cerrar ✕",
     "case.back":"← Volver","case.challenge":"El desafío","case.idea":"La idea","case.campaign":"La campaña","case.role":"Mi rol",
     "case.zoom":"Ver en grande ⤢","case.next":"Siguiente caso","card.cta":"Ver caso",
-    "real.badge":"Trabajo real","case.client":"El cliente","case.work":"Qué hago","case.pieces":"Algunas historias de noviembre"
+    "real.badge":"Trabajo real","case.client":"El cliente","case.work":"Qué hago","case.pieces":"Algunas historias de noviembre",
+    "case.problem":"El problema","case.method":"Cómo investigamos","case.findings":"Qué encontramos"
   },
   en:{
     "nav.work":"Work","nav.photo":"Photography","nav.about":"About","nav.contact":"Contact",
@@ -456,7 +459,8 @@ const UI = {
     "lb.close":"Close ✕",
     "case.back":"← Back","case.challenge":"The challenge","case.idea":"The idea","case.campaign":"The campaign","case.role":"My role",
     "case.zoom":"View full size ⤢","case.next":"Next case","card.cta":"View case",
-    "real.badge":"Client work","case.client":"The client","case.work":"What I do","case.pieces":"A few stories from November"
+    "real.badge":"Client work","case.client":"The client","case.work":"What I do","case.pieces":"A few stories from November",
+    "case.problem":"The problem","case.method":"How we researched","case.findings":"What we found"
   }
 };
 
@@ -501,6 +505,43 @@ const P = [
     work:["Every month I plan the brand's Instagram stories, day by day. The calendar mixes special dates (Sandwich Day, Singles' Day, long weekends), product, ways to engage the community — polls, quizzes, question boxes — and a spotlight on each location.",
           "Then I design the stories in Canva, staying true to the brand's visual identity and typefaces, and making sure the layouts don't repeat from one day to the next."],
     role:["Monthly story planning, ideas and content proposals, and designing the assets in Canva. Each calendar is reviewed by the agency before it goes live."]}
+},
+{
+  /* Investigación de mercado (proyecto integrador): tarjeta ancha con el carrusel de Instagram.
+     Las placas viven en img/sona/ (1080×1350, 4:5). */
+  id:"sona", wide:true, research:true, ar:"4/5", b:"#0C0A22", bt:"#EEE9FF",
+  brand:"SONA × NEXA", dir:"img/sona/",
+  reel:["sona-01.jpg","sona-03.jpg","sona-07.jpg","sona-10.jpg"],
+  gallery:[
+    ["sona-01.jpg","Portada: ¿Cuidarías tu audición si se viera así de bien?","Cover: Would you protect your hearing if it looked this good?"],
+    ["sona-02.jpg","El producto: un ear cuff que escucha por vos, con su app de monitoreo","The product: an ear cuff that listens for you, with its monitoring app"],
+    ["sona-03.jpg","Diseño: 5 terminaciones, un mismo cuidado","Design: 5 finishes, the same care"],
+    ["sona-04.jpg","El mercado: Fashion-Tech crece, pero la Gen Z pide utilidad real","The market: Fashion-Tech is growing, but Gen Z wants real utility"],
+    ["sona-05.jpg","La pregunta de investigación","The research question"],
+    ["sona-06.jpg","Metodología: 5 entrevistas, un focus group y una encuesta","Method: 5 interviews, a focus group and a survey"],
+    ["sona-07.jpg","Hallazgo clave: el 80,5% nunca usó protección auditiva","Key finding: 80.5% have never used hearing protection"],
+    ["sona-08.jpg","Resultados de la encuesta: primero la función, después la estética","Survey results: function first, then aesthetics"],
+    ["sona-09.jpg","3 claves para lanzar SONA","3 keys to launching SONA"],
+    ["sona-10.jpg","Cierre: El sonido pasa. Tu audición queda.","Closing: The sound fades. Your hearing stays."]
+  ],
+  es:{ title:"SONA — Investigación de mercado para NEXA", quote:"“El sonido pasa. Tu audición queda.”",
+    meta:"Investigación de Mercado · Universidad de Palermo · 2026", badge:"Investigación de mercado",
+    piecesTitle:"El resumen, en carrusel de Instagram",
+    tags:["Investigación cualitativa","Investigación cuantitativa","Fashion-Tech","Phygital","Gen Z","Estrategia","Campaña 360"],
+    challenge:["Como consultora NEXA, investigamos si había lugar en el mercado para SONA: un ear cuff inteligente que combina joyería contemporánea, protección auditiva adaptable, una app de monitoreo de sonido y un gemelo digital. La pregunta era si los jóvenes perciben valor suficiente en sumar todo eso en un solo accesorio."],
+    idea:["Primero analicé el mercado Fashion-Tech con apoyo de IA: oportunidades, falencias, competencia y el interés de la Gen Z y la Gen Alpha. Después diseñamos una investigación mixta con jóvenes de 18 a 28 años de CABA y GBA: cinco entrevistas en profundidad, un focus group y una encuesta online."],
+    campaign:["El 80,5% de los encuestados nunca usó protección auditiva en recitales o boliches, pero le dio un 4,33 sobre 5 a la posibilidad de regular el aislamiento según el entorno. El diseño de joyería baja la fricción de usar un protector, y el gemelo digital funciona mejor como herramienta personal que para exhibir: el 54,3% no lo compartiría.",
+              "Con esos hallazgos propusimos una campaña 360 bajo el concepto “El sonido pasa. Tu audición queda.”, con contenido para redes, activaciones en festivales y alianzas con creadores."],
+    role:["Hice la investigación de mercado, el diseño de los instrumentos, el análisis de los resultados y la propuesta de comunicación. También armé el informe final y este carrusel que resume el proyecto."]},
+  en:{ title:"SONA — Market research for NEXA", quote:"“El sonido pasa. Tu audición queda.”", quoteSub:"(“The sound fades. Your hearing stays.”)",
+    meta:"Market Research · Universidad de Palermo · 2026", badge:"Market research",
+    piecesTitle:"The summary, as an Instagram carousel",
+    tags:["Qualitative research","Quantitative research","Fashion-Tech","Phygital","Gen Z","Strategy","360 campaign"],
+    challenge:["As the NEXA consultancy, we researched whether there was room in the market for SONA: a smart ear cuff that combines contemporary jewelry, adaptive hearing protection, a sound-monitoring app and a digital twin. The question was whether young people see enough value in bringing all of that into a single accessory."],
+    idea:["First I analyzed the Fashion-Tech market with the help of AI: opportunities, gaps, competitors and interest from Gen Z and Gen Alpha. Then we designed a mixed-methods study with 18-to-28-year-olds in Buenos Aires: five in-depth interviews, a focus group and an online survey."],
+    campaign:["80.5% of respondents had never used hearing protection at concerts or clubs, yet they rated the ability to adjust isolation to their surroundings 4.33 out of 5. The jewelry design lowers the friction of wearing a protector, and the digital twin works better as a personal tool than as something to show off: 54.3% wouldn't share it.",
+              "From those findings we proposed a 360 campaign under the concept “The sound fades. Your hearing stays.”, with social content, festival activations and creator partnerships."],
+    role:["I carried out the market research, designed the research tools, analyzed the results and developed the communication proposal. I also put together the final report and this carousel summarizing the project."]}
 },
 {
   id:"lego-ba", img:"lego-ba", featured:true, b:"#FFCF00", bt:"#0D0D0D", pos:"50% 0%",
@@ -768,9 +809,9 @@ function card(p){
 }
 function wideCard(p){
   const d = p[lang];
-  return `<a class="card wide" href="#/${p.id}" style="--b:${p.b};--bt:${p.bt}" data-cursor="${esc(t('card.cta'))}">
+  return `<a class="card wide${p.research?' research':''}" href="#/${p.id}" style="--b:${p.b};--bt:${p.bt}${p.ar?`;--ar:${p.ar}`:''}" data-cursor="${esc(t('card.cta'))}">
     <span class="arrow">→</span>
-    <div class="body"><span class="badge real-b">${esc(t('real.badge'))}</span><div class="brand">${esc(p.brand)}</div><div class="concept">${esc(d.quote)}</div><div class="meta">${esc(d.meta)}</div></div>
+    <div class="body"><span class="badge real-b">${esc(d.badge||t('real.badge'))}</span><div class="brand">${esc(p.brand)}</div><div class="concept">${esc(d.quote)}</div><div class="meta">${esc(d.meta)}</div></div>
     <div class="reel">${p.reel.map(f=>{const g=p.gallery.find(x=>x[0]===f)||[f,'',''];return `<img src="${p.dir+f}" alt="${esc(lang==='es'?g[1]:g[2])}" loading="lazy">`}).join('')}</div></a>`;
 }
 function tl(list){return list.map(([y,h,s,p])=>`<li><span class="yr">${esc(y)}</span><div><h4>${esc(h)}<small>${esc(s)}</small></h4>${p?`<p>${esc(p)}</p>`:''}</div></li>`).join('')}
@@ -780,9 +821,9 @@ function render(){
   document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
   document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
   document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang));
-  $('#real').innerHTML = P.filter(p=>p.real).map(wideCard).join('');
+  $('#real').innerHTML = P.filter(p=>p.real||p.wide).map(wideCard).join('');
   $('#featured').innerHTML = P.filter(p=>p.featured).map(card).join('');
-  $('#grid').innerHTML = P.filter(p=>!p.featured&&!p.real).map(card).join('');
+  $('#grid').innerHTML = P.filter(p=>!p.featured&&!p.real&&!p.wide).map(card).join('');
   const q = P.filter(p=>!p[lang].plain).map(p=>`<span>${esc(p[lang].quote.replace(/[“”]/g,''))}</span>`).join('');
   $('#marquee').innerHTML = q + q;
   const c = CV[lang];
@@ -864,7 +905,7 @@ function openCase(id){
   el.innerHTML = `
   <div class="case-bar"><button type="button" id="back">${esc(t('case.back'))}</button><span class="logo">FLOR SAI</span></div>
   <header class="case-hero"><div class="wrap">
-    <div class="kick">${p.real?`<span class="pill award">${esc(t('real.badge'))}</span>`:''}${d.award?`<span class="pill award">★ ${esc(d.award)}</span>`:''}<span class="pill">${esc(d.meta)}</span></div>
+    <div class="kick">${p.real?`<span class="pill award">${esc(t('real.badge'))}</span>`:''}${d.badge?`<span class="pill award">${esc(d.badge)}</span>`:''}${d.award?`<span class="pill award">★ ${esc(d.award)}</span>`:''}<span class="pill">${esc(d.meta)}</span></div>
     <h2 class="display" id="case-title">${esc(p.brand)}</h2>
     <p class="quote">${esc(d.quote)}</p>${d.quoteSub?`<p class="tagline">${esc(d.quoteSub)}</p>`:''}
     ${p.links?`<div class="links">${p.links.map(([l,h])=>`<a href="${h}" target="_blank" rel="noopener">${esc(l)} ↗</a>`).join('')}</div>`:''}
@@ -872,11 +913,12 @@ function openCase(id){
   <div class="wrap">
     <div class="case-cols">
       ${p.real ? blk('01','case.client',d.client)+blk('02','case.work',d.work)+blk('03','case.role',d.role,'role')
+        : p.research ? blk('01','case.problem',d.challenge)+blk('02','case.method',d.idea)+blk('03','case.findings',d.campaign)+blk('04','case.role',d.role,'role')
         : blk('01','case.challenge',d.challenge)+blk('02','case.idea',d.idea)+blk('03','case.campaign',d.campaign)+blk('04','case.role',d.role,'role')}
     </div>
     <div class="case-tags">${d.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>
     ${ok(u)?`<div class="board" id="board" data-cursor="${esc(t('case.zoom'))}"><img src="${u}" alt="${esc(p.brand)} — ${esc(d.title)}"><span class="hint">${esc(t('case.zoom'))}</span></div>`:''}
-    ${p.gallery?`<h3 class="eyebrow" style="margin-bottom:16px">${esc(t('case.pieces'))}</h3><div class="stories">${p.gallery.map(([f,es_,en_,vid])=>vid
+    ${p.gallery?`<h3 class="eyebrow" style="margin-bottom:16px">${esc(d.piecesTitle||t('case.pieces'))}</h3><div class="stories"${p.ar?` style="--ar:${p.ar}"`:''}>${p.gallery.map(([f,es_,en_,vid])=>vid
       ? `<div class="vid"><video src="${p.dir+vid}" poster="${p.dir+f}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(lang==='es'?es_:en_)}"></video></div>`
       : `<button type="button" data-src="${p.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${p.dir+f}" alt="${esc(lang==='es'?es_:en_)}" loading="lazy"></button>`).join('')}</div>`:''}
     ${ok(v)?`<div class="video"><iframe src="${v}" title="${esc(p.brand)} — video" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>`:''}
