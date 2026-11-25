@@ -183,6 +183,8 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 .stories{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,18px)}
 @media (max-width:900px){.stories{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.stories{grid-template-columns:repeat(2,1fr)}}
+.stories.duo{grid-template-columns:1fr 1fr}
+@media (max-width:700px){.stories.duo{grid-template-columns:1fr}}
 .stories button{all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;aspect-ratio:var(--ar,9/16);background:var(--paper-2);box-shadow:0 1px 0 rgba(0,0,0,.08)}
 .stories button:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
 .stories .vid{border-radius:12px;overflow:hidden;aspect-ratio:9/16;background:var(--paper-2)}
@@ -564,6 +566,10 @@ const P = [
   /* Campaña de bien público (proyecto académico). La lámina vive en img/edadismo/poster.jpg. */
   id:"edadismo", img:"edadismo", b:"#1450A8", bt:"#DFFF00", pos:"50% 0%", ar:"4/5",
   brand:"A esta altura de la vida…", dir:"img/edadismo/",
+  mockups:{ ar:"3/2", items:[
+    ["btl-01.jpg","Acción BTL en el Centro Cultural Recoleta: cartel gigante “Prohibido para mayores de 60 años. Una prohibición que incomoda.”","BTL action at Centro Cultural Recoleta: giant sign reading “No entry for people over 60. A ban that makes you uncomfortable.”"],
+    ["btl-02.jpg","Salida de la muestra: “¿Te indignó verlo escrito? Pero ¿cuántas veces lo pensaste? La edad no limita los proyectos. Los prejuicios, sí.”","Exhibition exit: “Did it outrage you to see it written? But how many times have you thought it? Age doesn't limit projects. Prejudice does.”"]
+  ]},
   gallery:[
     ["carrusel-01.jpg","Gráfica: A esta edad, ¿por qué no? Una mujer mayor tatuándose el brazo","Print ad: At this age, why not? An older woman getting her arm tattooed"],
     ["carrusel-02.jpg","“Eso ya no es para tu edad.” ¿Según quién? El 26,8% de las personas de 60 años o más presenta déficit de proyectos personales","“That's not for your age anymore.” Says who? 26.8% of people aged 60+ lack personal projects"],
@@ -574,7 +580,7 @@ const P = [
   ],
   es:{ title:"A esta altura de la vida… ¿por qué no?", quote:"Una campaña de bien público contra el edadismo.", plain:true,
     meta:"Campañas de Bien Público · Universidad de Palermo · 2026 · Proyecto académico", award:"2.º puesto de la cátedra",
-    piecesTitle:"La campaña, en carrusel de Instagram",
+    piecesTitle:"La campaña, en carrusel de Instagram", mockupsTitle:"Acción BTL · Centro Cultural Recoleta",
     tags:["Bien público","Edadismo","Investigación","Concepto creativo","Vía pública","BTL","Redes sociales"],
     challenge:["Visibilizar el edadismo y cuestionar los prejuicios y la sobreprotección que limitan la autonomía y los proyectos personales de las personas mayores de 60 años. Según el Observatorio de la Deuda Social Argentina (UCA, 2024-2025), el 26,8% de las personas de 60 años o más tiene dificultades para proyectarse más allá del día a día.",
                "El público principal son adultos de 30 a 55 años —hijos, nietos y entorno cercano— que muchas veces reproducen el edadismo sin darse cuenta, con frases como “dejá, yo lo hago por vos” o “eso ya no es para tu edad”."],
@@ -589,7 +595,7 @@ const P = [
     role:["Desarrollé el proyecto completo: la investigación de la problemática, la definición del target, el insight, la PUC y el concepto creativo. También trabajé en el racional, la calendarización, el diseño de las piezas y mockups, el kit de redes y la lámina final."]},
   en:{ title:"A esta altura de la vida… ¿por qué no?", quote:"A public service campaign against ageism.", plain:true,
     meta:"Public Service Campaigns · Universidad de Palermo · 2026 · Academic project", award:"2nd place in class",
-    piecesTitle:"The campaign, as an Instagram carousel",
+    piecesTitle:"The campaign, as an Instagram carousel", mockupsTitle:"BTL action · Centro Cultural Recoleta",
     tags:["Public service","Ageism","Research","Creative concept","Out-of-home","BTL","Social media"],
     challenge:["Raise awareness of ageism and challenge the prejudice and overprotection that limit the autonomy and personal projects of people over 60. According to the Argentine Social Debt Observatory (UCA, 2024-2025), 26.8% of people aged 60 and over struggle to plan beyond day-to-day needs.",
                "The main audience is adults aged 30 to 55 — children, grandchildren and close family — who often reproduce ageism without realizing it, with phrases like “let me do it for you” or “that's not for your age anymore”."],
@@ -961,6 +967,7 @@ function openCase(id){
     </div>
     <div class="case-tags">${d.tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div>
     ${ok(u)?`<div class="board" id="board" data-cursor="${esc(t('case.zoom'))}"><img src="${u}" alt="${esc(p.brand)} — ${esc(d.title)}"><span class="hint">${esc(t('case.zoom'))}</span></div>`:''}
+    ${p.mockups?`<h3 class="eyebrow" style="margin:clamp(28px,3.5vw,48px) 0 16px">${esc(d.mockupsTitle)}</h3><div class="stories duo" style="--ar:${p.mockups.ar};margin-bottom:clamp(32px,4vw,56px)">${p.mockups.items.map(([f,es_,en_])=>`<button type="button" data-src="${p.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${p.dir+f}" alt="${esc(lang==='es'?es_:en_)}" loading="lazy"></button>`).join('')}</div>`:''}
     ${p.gallery?`<h3 class="eyebrow" style="margin-bottom:16px">${esc(d.piecesTitle||t('case.pieces'))}</h3><div class="stories"${p.ar?` style="--ar:${p.ar}"`:''}>${p.gallery.map(([f,es_,en_,vid])=>vid
       ? `<div class="vid"><video src="${p.dir+vid}" poster="${p.dir+f}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(lang==='es'?es_:en_)}"></video></div>`
       : `<button type="button" data-src="${p.dir+f}" data-cursor="${esc(t('photo.zoom'))}"><img src="${p.dir+f}" alt="${esc(lang==='es'?es_:en_)}" loading="lazy"></button>`).join('')}</div>`:''}
