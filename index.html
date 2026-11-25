@@ -315,8 +315,8 @@ footer{border-top:2px solid var(--ink);padding:22px 0 30px;display:flex;justify-
 <div class="marquee" aria-label="Conceptos de campaña"><div class="marquee-track" id="marquee"></div></div>
 
 <div class="stats" id="stats">
-  <div class="stat"><b>8</b><span data-i18n="stat.1">campañas desarrolladas</span></div>
-  <div class="stat"><b>3</b><span data-i18n="stat.2">trabajos premiados</span></div>
+  <div class="stat"><b>9</b><span data-i18n="stat.1">campañas desarrolladas</span></div>
+  <div class="stat"><b>4</b><span data-i18n="stat.2">trabajos premiados</span></div>
   <div class="stat"><b>1.º</b><span data-i18n="stat.3">puesto de la cátedra con LEGO Architecture BA</span></div>
   <div class="stat"><b>2</b><span data-i18n="stat.4">proyectos con clientes y briefs reales</span></div>
 </div>
@@ -561,6 +561,31 @@ const P = [
     role:["I worked on brand and competitive research, the creative brief and defining the core concept. I also developed activation and experience ideas, wrote content and assets, and built the visual proposal for the presentation."]}
 },
 {
+  /* Campaña de bien público (proyecto académico). La lámina vive en img/edadismo/poster.jpg. */
+  id:"edadismo", img:"edadismo", b:"#1450A8", bt:"#DFFF00", pos:"50% 0%",
+  brand:"A esta altura de la vida…",
+  es:{ title:"A esta altura de la vida… ¿por qué no?", quote:"Una campaña de bien público contra el edadismo.", plain:true,
+    meta:"Campañas de Bien Público · Universidad de Palermo · 2026 · Proyecto académico", award:"2.º puesto de la cátedra",
+    tags:["Bien público","Edadismo","Investigación","Concepto creativo","Vía pública","BTL","Redes sociales"],
+    challenge:["Visibilizar el edadismo y cuestionar los prejuicios y la sobreprotección que limitan la autonomía y los proyectos personales de las personas mayores de 60 años. Según el Observatorio de la Deuda Social Argentina (UCA, 2024-2025), el 26,8% de las personas de 60 años o más tiene dificultades para proyectarse más allá del día a día.",
+               "El público principal son adultos de 30 a 55 años —hijos, nietos y entorno cercano— que muchas veces reproducen el edadismo sin darse cuenta, con frases como “dejá, yo lo hago por vos” o “eso ya no es para tu edad”."],
+    idea:["Resignificar “A esta altura de la vida…”, una frase cotidiana que suele funcionar como excusa o como límite, y transformarla en el comienzo de una nueva posibilidad: “A esta altura de la vida… ¿por qué no?”.",
+          "La paleta trabaja el concepto: una base neutra en blanco, negro y gris representa los prejuicios, y el verde lima marca aquello que la persona todavía quiere hacer, decidir o proyectar."],
+    campaign:["Una campaña de cuatro semanas en octubre, mes del Día Internacional de las Personas Mayores, que va de la intriga a la resignificación y al llamado a la reflexión. Incluye gráficas, vía pública sobre Av. del Libertador, contenido para redes y una acción BTL en el Centro Cultural Recoleta: un cartel de “Prohibido para mayores de 60 años” que incomoda a propósito y, a la salida, pregunta “¿Te indignó verlo escrito? Pero ¿cuántas veces lo pensaste?”.",
+              "El proyecto obtuvo el segundo puesto de la cátedra de Mariano Hiriart."],
+    role:["Desarrollé el proyecto completo: la investigación de la problemática, la definición del target, el insight, la PUC y el concepto creativo. También trabajé en el racional, la calendarización, el diseño de las piezas y mockups, el kit de redes y la lámina final."]},
+  en:{ title:"A esta altura de la vida… ¿por qué no?", quote:"A public service campaign against ageism.", plain:true,
+    meta:"Public Service Campaigns · Universidad de Palermo · 2026 · Academic project", award:"2nd place in class",
+    tags:["Public service","Ageism","Research","Creative concept","Out-of-home","BTL","Social media"],
+    challenge:["Raise awareness of ageism and challenge the prejudice and overprotection that limit the autonomy and personal projects of people over 60. According to the Argentine Social Debt Observatory (UCA, 2024-2025), 26.8% of people aged 60 and over struggle to plan beyond day-to-day needs.",
+               "The main audience is adults aged 30 to 55 — children, grandchildren and close family — who often reproduce ageism without realizing it, with phrases like “let me do it for you” or “that's not for your age anymore”."],
+    idea:["Reframe “A esta altura de la vida…” (“At this point in life…”), an everyday phrase that usually works as an excuse or a limit, and turn it into the start of a new possibility: “At this point in life… why not?”.",
+          "The palette carries the concept: a neutral base of white, black and gray stands for prejudice, while lime green highlights what the person still wants to do, decide or plan."],
+    campaign:["A four-week campaign in October, the month of the International Day of Older Persons, moving from teaser to reframing to a call for reflection. It includes print, out-of-home on Av. del Libertador, social content and a BTL action at Centro Cultural Recoleta: a deliberately uncomfortable “No entry for people over 60” sign that, on the way out, asks “Did it outrage you to see it written? But how many times have you thought it?”.",
+              "The project won second place in Mariano Hiriart's class."],
+    role:["I developed the whole project: researching the issue, defining the target, the insight, the core message and the creative concept. I also built the rationale and the calendar, designed the assets and mockups, the social media kit and the final board."]}
+},
+{
   id:"un-dulce-permiso", img:"un-dulce-permiso", b:"#4A2A1E", bt:"#F6E7C8", pos:"50% 0%",
   brand:"Un Dulce Permiso",
   es:{ title:"Un Dulce Permiso", quote:"“Factura va, envido viene, los muchachos se entretienen.”",
@@ -688,7 +713,7 @@ const CV = {
       ["Jul 2022","Introducción al Community Management","Domestika · Curso online",""],
       ["Jul 2022","Introducción a la fotografía","Domestika · Curso online",""]
     ],
-    awards:["1.º puesto de la cátedra — LEGO Architecture BA (Publicidad II): estrategia de medios","2.º puesto de la cátedra — Havanna (Campañas en Punto de Venta)","Trabajo premiado — KitKat (Publicidad III)"],
+    awards:["1.º puesto de la cátedra — LEGO Architecture BA (Publicidad II): estrategia de medios","2.º puesto de la cátedra — Havanna (Campañas en Punto de Venta)","2.º puesto de la cátedra — A esta altura de la vida… ¿por qué no? (Campañas de Bien Público)","Trabajo premiado — KitKat (Publicidad III)"],
     skills:["Meta Business Suite","Métricas e insights de Instagram y TikTok","Calendarización de contenidos","Redacción publicitaria","Canva","Edits (Meta)","ChatGPT","Claude","Gemini","Canva IA","Excel (tablas dinámicas, reportes)","Google Workspace"],
     langs:["Español — nativo","Inglés — B2 (First Certificate, Cambridge)","Hebreo — básico"]
   },
@@ -709,7 +734,7 @@ const CV = {
       ["Jul 2022","Introduction to Community Management","Domestika · Online course",""],
       ["Jul 2022","Introduction to Photography","Domestika · Online course",""]
     ],
-    awards:["1st place in class — LEGO Architecture BA (Advertising II): media strategy","2nd place in class — Havanna (Point-of-Sale Campaigns)","Award-winning project — KitKat (Advertising III)"],
+    awards:["1st place in class — LEGO Architecture BA (Advertising II): media strategy","2nd place in class — Havanna (Point-of-Sale Campaigns)","2nd place in class — A esta altura de la vida… ¿por qué no? (Public Service Campaigns)","Award-winning project — KitKat (Advertising III)"],
     skills:["Meta Business Suite","Instagram & TikTok metrics and insights","Content calendars","Copywriting","Canva","Edits (Meta)","ChatGPT","Claude","Gemini","Canva AI","Excel (pivot tables, reports)","Google Workspace"],
     langs:["Spanish — native","English — B2 (First Certificate, Cambridge)","Hebrew — basic"]
   }

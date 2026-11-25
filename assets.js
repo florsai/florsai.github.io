@@ -7,6 +7,7 @@ window.ASSETS = {
     "lego-ba": "https://cdn.myportfolio.com/fcb1558e-c615-44e7-bc7e-734a0be9e4d8/788bb308-37cb-42fd-8ff6-c552b99e5b31_rw_1200.png?h=d7f192594aff0ed2411fb7fc7fa3993c",
     "pepsi-twist": "https://cdn.myportfolio.com/fcb1558e-c615-44e7-bc7e-734a0be9e4d8/bc36418c-d925-4980-b80a-5b7e00e3bebf_rw_1200.png?h=2981bb6dfb627d2baf49901d70494ea3",
     "shazam-ft-beats": "https://cdn.myportfolio.com/fcb1558e-c615-44e7-bc7e-734a0be9e4d8/78492ad0-81d3-4066-96cb-e3eaa38167f3_rw_1920.png?h=c003050906560e35751f113b97137a02",
+    "edadismo": "img/edadismo/poster.jpg",
     "havanna": "https://cdn.myportfolio.com/fcb1558e-c615-44e7-bc7e-734a0be9e4d8/23a8ae09-3883-4ccf-9986-db0d245befbb_rw_1200.png?h=d6b4f6a3ef624804ecf7d4c6e5593a84",
     "cv": "https://cdn.myportfolio.com/fcb1558e-c615-44e7-bc7e-734a0be9e4d8/625f5a8c-9520-40c1-aa6d-770bf59b6a33_rwc_0x0x1415x2000x4096.png?h=07e3745068625e1a551352d00e833c8a"
   },
